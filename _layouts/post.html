@@ -7,4 +7,11 @@ layout: default
     <h1>{{ page.title }}</h1>
   </header>
   <div class="post-body">{{ content }}</div>
+  <nav class="article-nav" aria-label="글 탐색">
+    <a class="article-nav-home" href="{{ '/#articles' | relative_url }}">글 목록 보기 <span>↗</span></a>
+    <div class="article-nav-links">
+      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>이전 글</small><strong>{{ page.previous.title }}</strong></a>{% endif %}
+      {% if page.next %}<a href="{{ page.next.url | relative_url }}"><small>다음 글</small><strong>{{ page.next.title }}</strong></a>{% endif %}
+    </div>
+  </nav>
 </article>
