@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Playwright MCP로 웹 테스트 자동화 시작하기"
-date: 2026-09-16 18:00:00 +0900
+date: 2026-09-16 00:00:00 +0900
 categories: [qa]
 tags: [qa, playwright, mcp, test-automation, ai]
 ---
