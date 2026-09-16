@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">ITSM and quality framework relationships</title>
+  <desc id="desc">ITIL, ISO 9001, ISO IEC 20000, and CMMI viewed through operations and improvement</desc>
+  <rect width="1200" height="540" rx="28" fill="#f3faf6"/>
+  <text x="72" y="70" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#14221d">운영 관리 프레임워크를 읽는 방법</text>
+  <text x="72" y="106" font-family="Arial,sans-serif" font-size="17" fill="#648076">서비스 운영, 품질 시스템, 프로세스 개선은 서로 다른 질문을 다룹니다.</text>
+  <rect x="72" y="170" width="240" height="250" rx="22" fill="#e0f1e8" stroke="#a9d6c0" stroke-width="3"/>
+  <rect x="340" y="170" width="240" height="250" rx="22" fill="#fff" stroke="#a9d6c0" stroke-width="3"/>
+  <rect x="608" y="170" width="240" height="250" rx="22" fill="#e0f1e8" stroke="#a9d6c0" stroke-width="3"/>
+  <rect x="876" y="170" width="252" height="250" rx="22" fill="#fff" stroke="#a9d6c0" stroke-width="3"/>
+  <text x="108" y="230" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#14221d">ITIL</text><text x="108" y="274" font-family="Arial,sans-serif" font-size="16" fill="#648076">서비스를 어떻게</text><text x="108" y="302" font-family="Arial,sans-serif" font-size="16" fill="#648076">운영하고 개선할까?</text>
+  <text x="376" y="230" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#14221d">ISO 9001</text><text x="376" y="274" font-family="Arial,sans-serif" font-size="16" fill="#648076">품질 시스템이</text><text x="376" y="302" font-family="Arial,sans-serif" font-size="16" fill="#648076">일관되게 작동할까?</text>
+  <text x="644" y="230" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#14221d">ISO/IEC 20000</text><text x="644" y="274" font-family="Arial,sans-serif" font-size="16" fill="#648076">IT 서비스를 관리하는</text><text x="644" y="302" font-family="Arial,sans-serif" font-size="16" fill="#648076">체계가 있는가?</text>
+  <text x="912" y="230" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#14221d">CMMI</text><text x="912" y="274" font-family="Arial,sans-serif" font-size="16" fill="#648076">프로세스 능력을</text><text x="912" y="302" font-family="Arial,sans-serif" font-size="16" fill="#648076">어떻게 개선할까?</text>
+  <text x="72" y="480" font-family="Arial,sans-serif" font-size="16" fill="#648076">공통 흐름: 기준 정의 → 실행·기록 → 측정 → 시정·개선 → 다시 검토</text>
+</svg>
