@@ -29,7 +29,6 @@ git pull origin main
 - 글 초반에 초보자를 위한 기본 개념 설명
 - 새 기술을 소개할 때는 해당 기술의 기반이 되는 개념·약어·문제 상황을 먼저 설명
 - 독자가 해당 기술을 처음 본다고 가정하고, “무엇인지 → 왜 필요한지 → 어떻게 쓰는지” 순서로 작성
-- 예: Kyverno 전에는 Kubernetes 정책과 Admission Control, OpenTofu 전에는 IaC와 상태 관리, OpenTelemetry Collector 전에는 Trace·Metric·Log와 Collector 역할을 설명
 - 설명마다 가능한 경우 구체적인 예시 포함
 - 초반에 `먼저 답하면` Q&A 추가
 - 후반에 `한계와 적용 기준` Q&A 추가
