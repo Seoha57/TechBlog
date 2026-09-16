@@ -1,7 +1,7 @@
 title: "운영의 기술"
 description: "QA · DBA · 인프라 실무 기술블로그"
-url: ""
-baseurl: ""
+url: "https://seoha57.github.io"
+baseurl: "/TechBlog"
 theme: minima
 lang: ko-KR
 permalink: /:categories/:title/
