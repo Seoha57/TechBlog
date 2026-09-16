@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<section class="articles articles-page">
+  <div class="section-heading"><div><p class="section-label">ARCHIVE</p><h1>전체 아티클</h1></div><span>{{ site.posts.size | minus: 1 }} articles</span></div>
+  {% assign visible_posts = site.posts | where_exp: "post", "post.exclude_from_latest != true" %}
+  <div class="filters"><a class="active" href="#" data-filter="all">전체</a><a href="#" data-filter="qa">QA</a><a href="#" data-filter="dba">DBA</a><a href="#" data-filter="infrastructure">Infrastructure</a><a href="#" data-filter="observability">Observability</a></div>
+  <div class="post-list">
+    {% for post in visible_posts %}<article class="post-card" data-categories="{{ post.categories | join: ',' }}"><a href="{{ post.url | relative_url }}"><div class="post-meta"><span>{{ post.categories | first | default: 'NOTE' }}</span><time>{{ post.date | date: '%Y.%m.%d' }}</time></div><h3>{{ post.title }}</h3><p>{{ post.excerpt | strip_html | truncate: 160 }}</p><span class="read-more">Read article ↗</span></a></article>{% endfor %}
+  </div>
+</section>
+<script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
