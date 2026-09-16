@@ -1,19 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
-  <rect width="1200" height="520" rx="28" fill="#edf6ef"/>
-  <text x="70" y="72" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#18201c">Playwright MCP 테스트 흐름</text>
-  <text x="70" y="108" font-family="Arial,sans-serif" font-size="16" fill="#6e7972">자연어 시나리오를 브라우저 동작과 검증 결과로 연결합니다.</text>
-  <g font-family="Arial,sans-serif">
-    <rect x="70" y="190" width="220" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
-    <text x="180" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">QA 시나리오</text>
-    <text x="180" y="280" text-anchor="middle" font-size="14" fill="#6e7972">로그인하고 상품 검색</text>
-    <path d="M310 265H405" stroke="#6aa88b" stroke-width="4"/><path d="M395 253l14 12-14 12" fill="none" stroke="#6aa88b" stroke-width="4"/>
-    <rect x="420" y="190" width="220" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
-    <text x="530" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">MCP 서버</text>
-    <text x="530" y="280" text-anchor="middle" font-size="14" fill="#6e7972">브라우저 도구 호출</text>
-    <path d="M660 265H755" stroke="#6aa88b" stroke-width="4"/><path d="M745 253l14 12-14 12" fill="none" stroke="#6aa88b" stroke-width="4"/>
-    <rect x="770" y="190" width="300" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
-    <text x="920" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">Playwright 브라우저</text>
-    <text x="920" y="280" text-anchor="middle" font-size="14" fill="#6e7972">동작 · 스크린샷 · 검증</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720">
+  <rect width="1440" height="720" fill="#f4f8f4"/>
+  <circle cx="1270" cy="90" r="180" fill="#e2f0e6"/>
+  <circle cx="70" cy="660" r="150" fill="#e8f3ea"/>
+  <g font-family="Arial, Noto Sans KR, sans-serif" fill="#18201c">
+    <text x="100" y="112" font-size="18" letter-spacing="4" fill="#6aa88b" font-weight="700">PLAYWRIGHT MCP</text>
+    <text x="100" y="190" font-size="52" font-weight="700" letter-spacing="-2">자연어 시나리오가</text>
+    <text x="100" y="250" font-size="52" font-weight="700" letter-spacing="-2">검증 가능한 테스트가 되기까지</text>
+    <text x="100" y="300" font-size="18" fill="#6e7972">AI로 탐색하고, 코드로 고정하고, QA가 결과를 확인합니다.</text>
+    <line x1="100" y1="360" x2="1340" y2="360" stroke="#cfe2d4" stroke-width="2"/>
+    <g transform="translate(100 420)">
+      <text x="0" y="0" font-size="16" fill="#6aa88b" font-weight="700">01</text>
+      <text x="0" y="52" font-size="30" font-weight="700">시나리오</text>
+      <text x="0" y="92" font-size="16" fill="#6e7972">로그인하고 상품을 검색한다</text>
+      <text x="0" y="142" font-size="14" fill="#9aa89e">QA가 확인할 조건을 먼저 정의</text>
+    </g>
+    <path d="M475 470h80" stroke="#6aa88b" stroke-width="2"/><path d="M545 460l12 10-12 10" fill="none" stroke="#6aa88b" stroke-width="2"/>
+    <g transform="translate(620 420)">
+      <text x="0" y="0" font-size="16" fill="#6aa88b" font-weight="700">02</text>
+      <text x="0" y="52" font-size="30" font-weight="700">탐색</text>
+      <text x="0" y="92" font-size="16" fill="#6e7972">MCP가 브라우저 동작을 호출</text>
+      <text x="0" y="142" font-size="14" fill="#9aa89e">화면 흐름과 locator를 빠르게 확인</text>
+    </g>
+    <path d="M995 470h80" stroke="#6aa88b" stroke-width="2"/><path d="M1065 460l12 10-12 10" fill="none" stroke="#6aa88b" stroke-width="2"/>
+    <g transform="translate(1140 420)">
+      <text x="0" y="0" font-size="16" fill="#6aa88b" font-weight="700">03</text>
+      <text x="0" y="52" font-size="30" font-weight="700">검증</text>
+      <text x="0" y="92" font-size="16" fill="#6e7972">Playwright 코드로 반복 실행</text>
+      <text x="0" y="142" font-size="14" fill="#9aa89e">assertion과 결과를 테스트에 남김</text>
+    </g>
   </g>
-  <text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#6e7972">이미지 출처: 직접 제작</text>
 </svg>
