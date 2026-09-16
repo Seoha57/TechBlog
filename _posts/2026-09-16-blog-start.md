@@ -3,6 +3,7 @@ layout: post
 title: "새로운 기술을 배우며 시작합니다"
 categories: [learning]
 tags: [qa, dba, infrastructure]
+exclude_from_latest: true
 ---
 
 QA, DBA, 인프라를 기반으로 새로운 기술을 배우고 검증 기준을 정리합니다.
