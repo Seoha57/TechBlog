@@ -10,6 +10,13 @@ QA 업무에서 테스트 자동화를 시작할 때 가장 먼저 생기는 질
 
 이번 글에서는 Playwright MCP를 사용해 자연어로 웹 페이지를 탐색하고, 테스트에 필요한 브라우저 동작을 확인하는 흐름을 정리합니다. MCP는 테스트를 완전히 대신하는 도구가 아니라, 테스트 시나리오를 빠르게 탐색하고 초안을 만드는 보조 수단으로 접근합니다.
 
+<section class="quick-answers">
+  <p class="quick-label">먼저 답하면</p>
+  <div class="quick-answer"><h3>Q. Playwright MCP가 테스트 코드를 완전히 대신하나요?</h3><p>A. 아닙니다. 브라우저 탐색과 시나리오 초안 작성에 적합하고, 반복 회귀 테스트는 사람이 검토한 Playwright 코드로 고정하는 편이 안전합니다.</p></div>
+  <div class="quick-answer"><h3>Q. QA 엔지니어가 가장 먼저 적용할 곳은 어디인가요?</h3><p>A. 로그인, 검색, 결제 전 검증처럼 입력과 기대 결과가 명확하고 반복 실행이 많은 시나리오부터 시작하는 것이 좋습니다.</p></div>
+  <div class="quick-answer"><h3>Q. 바로 운영 시스템에 연결해도 되나요?</h3><p>A. 테스트 계정과 비식별 데이터를 사용하는 별도 환경에서 검증한 뒤, 승인된 시나리오만 CI에 연결해야 합니다.</p></div>
+</section>
+
 ![Playwright MCP 테스트 흐름]({{ '/assets/images/playwright-mcp-flow.svg' | relative_url }})
 
 *이미지 출처: 직접 제작*
