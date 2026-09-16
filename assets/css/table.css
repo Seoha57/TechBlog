@@ -1,0 +1,7 @@
+.post-body table{width:100%;margin:34px 0;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid #d8e7dc;border-radius:14px;background:#fff;font-size:15px;line-height:1.6}
+.post-body th{padding:16px 18px;background:#e8f4eb;color:#1b3326;font-weight:750;text-align:left;border-bottom:1px solid #c9dfd0;white-space:nowrap}
+.post-body td{padding:15px 18px;color:#52665a;border-bottom:1px solid #e5eee7;vertical-align:top}
+.post-body tr:last-child td{border-bottom:0}
+.post-body tbody tr:nth-child(even){background:#f8fcf9}
+.post-body tbody tr:hover{background:#f0f8f2}
+@media(max-width:700px){.post-body table{display:block;overflow-x:auto;white-space:nowrap;font-size:14px}.post-body th,.post-body td{padding:13px 15px}}
