@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" rx="28" fill="#edf6ef"/>
+  <text x="70" y="72" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#18201c">Playwright MCP 테스트 흐름</text>
+  <text x="70" y="108" font-family="Arial,sans-serif" font-size="16" fill="#6e7972">자연어 시나리오를 브라우저 동작과 검증 결과로 연결합니다.</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="70" y="190" width="220" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
+    <text x="180" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">QA 시나리오</text>
+    <text x="180" y="280" text-anchor="middle" font-size="14" fill="#6e7972">로그인하고 상품 검색</text>
+    <path d="M310 265H405" stroke="#6aa88b" stroke-width="4"/><path d="M395 253l14 12-14 12" fill="none" stroke="#6aa88b" stroke-width="4"/>
+    <rect x="420" y="190" width="220" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
+    <text x="530" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">MCP 서버</text>
+    <text x="530" y="280" text-anchor="middle" font-size="14" fill="#6e7972">브라우저 도구 호출</text>
+    <path d="M660 265H755" stroke="#6aa88b" stroke-width="4"/><path d="M745 253l14 12-14 12" fill="none" stroke="#6aa88b" stroke-width="4"/>
+    <rect x="770" y="190" width="300" height="150" rx="18" fill="#fff" stroke="#b7d5c1" stroke-width="2"/>
+    <text x="920" y="245" text-anchor="middle" font-size="18" font-weight="700" fill="#18201c">Playwright 브라우저</text>
+    <text x="920" y="280" text-anchor="middle" font-size="14" fill="#6e7972">동작 · 스크린샷 · 검증</text>
+  </g>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#6e7972">이미지 출처: 직접 제작</text>
+</svg>
