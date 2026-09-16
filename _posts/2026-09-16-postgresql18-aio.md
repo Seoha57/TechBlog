@@ -6,7 +6,7 @@ categories: [dba]
 tags: [dba, postgresql, postgresql18, aio, io_uring, performance]
 ---
 
-PostgreSQL 18에서 가장 주목할 만한 변화 중 하나는 비동기 I/O(Asynchronous I/O, AIO)입니다. 데이터베이스가 디스크에서 페이지를 읽을 때마다 결과를 기다리는 방식에서 벗어나, 여러 읽기 요청을 준비하고 처리하는 구조를 도입했습니다.
+PostgreSQL 18에서 가장 주목할 만한 변화 중 하나는 비동기 I/O(Asynchronous I/O, AIO)입니다. 먼저 I/O는 데이터베이스가 디스크나 네트워크에서 데이터를 읽고 쓰는 작업을 뜻합니다. 동기 I/O에서는 한 읽기 작업의 결과를 기다린 뒤 다음 작업으로 넘어가는 흐름이 흔하고, 비동기 I/O에서는 처리 가능한 읽기 요청을 겹쳐 준비해 대기 시간을 줄일 여지가 생깁니다. PostgreSQL 18은 데이터베이스가 디스크에서 페이지를 읽을 때마다 결과를 기다리는 방식에서 벗어나, 여러 읽기 요청을 준비하고 처리하는 구조를 도입했습니다.
 
 다만 AIO를 “모든 쿼리를 빠르게 만드는 기능”으로 이해하면 곤란합니다. PostgreSQL 공식 문서가 설명하듯 PostgreSQL 18의 AIO는 순차 스캔, bitmap heap scan, VACUUM 같은 I/O 중심 작업을 주요 대상으로 합니다. 데이터가 이미 메모리 캐시에 있거나 CPU와 잠금이 병목인 경우에는 효과가 제한적일 수 있습니다.
 

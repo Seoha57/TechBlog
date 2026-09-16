@@ -8,6 +8,8 @@ tags: [qa, playwright, mcp, test-automation, ai]
 
 QA 업무에서 테스트 자동화를 시작할 때 가장 먼저 생기는 질문은 “무엇을 자동화할 것인가”입니다. 모든 화면을 자동화하는 것보다, 반복 실행이 많고 결과가 명확한 시나리오부터 선택하는 편이 좋습니다.
 
+먼저 용어를 나누어 보겠습니다. Playwright는 Chromium, Firefox, WebKit 같은 브라우저를 코드로 제어하고 웹 페이지의 동작을 검증하는 오픈 소스 자동화 프레임워크입니다. MCP(Model Context Protocol)는 AI 도구가 외부 프로그램의 기능을 정해진 방식으로 호출하도록 연결하는 규칙입니다. 따라서 Playwright MCP는 Playwright 자체를 새로 만든 도구라기보다, AI가 브라우저 탐색과 Playwright 관련 작업을 요청할 수 있도록 연결한 구성으로 이해하면 쉽습니다.
+
 이번 글에서는 Playwright MCP를 활용해 자연어로 웹 페이지를 탐색하고, 테스트에 필요한 브라우저 동작을 확인하는 흐름을 정리합니다. MCP는 테스트를 완전히 대신하는 도구가 아니라, 테스트 시나리오를 빠르게 탐색하고 초안을 만드는 보조 수단으로 바라봅니다.
 
 <section class="quick-answers">

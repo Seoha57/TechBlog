@@ -6,7 +6,9 @@ categories: [infrastructure]
 tags: [infrastructure, kubernetes, gateway-api, ingress, networking]
 ---
 
-Kubernetes에서 외부 트래픽을 서비스로 연결할 때 오랫동안 Ingress가 많이 사용되었습니다. 하지만 조직과 서비스가 커지면 하나의 Ingress 리소스에 서로 다른 팀의 라우팅 규칙, 컨트롤러별 annotation, 인프라 설정이 함께 들어가기 시작합니다. 누가 로드밸런서를 만들고, 누가 호스트와 경로를 관리하며, 어떤 팀이 다른 네임스페이스의 서비스에 연결할 수 있는지 구분하기 어려워집니다.
+Kubernetes에서 외부 트래픽을 서비스로 연결할 때 오랫동안 Ingress가 많이 사용되었습니다. Ingress는 클러스터 밖에서 들어온 HTTP·HTTPS 요청을 호스트 이름과 경로에 따라 Kubernetes Service로 전달하는 규칙입니다. 예를 들어 `api.example.com/orders` 요청을 `order-service`로 보내는 입구라고 생각하면 됩니다.
+
+하지만 조직과 서비스가 커지면 하나의 Ingress 리소스에 서로 다른 팀의 라우팅 규칙, 컨트롤러별 annotation, 인프라 설정이 함께 들어가기 시작합니다. 누가 로드밸런서를 만들고, 누가 호스트와 경로를 관리하며, 어떤 팀이 다른 네임스페이스의 서비스에 연결할 수 있는지 구분하기 어려워집니다.
 
 Gateway API는 이런 문제를 해결하기 위해 Kubernetes 생태계에서 제안된 확장 API입니다. 이 글에서는 GatewayClass, Gateway, HTTPRoute를 중심으로 역할을 나누는 방법과 Ingress와의 차이, 실제 YAML 예시, 적용 전 확인할 기준을 정리합니다. 특정 클러스터에서 직접 배포하거나 성능을 측정한 결과가 아니라, Kubernetes와 Gateway API 공식 문서를 바탕으로 개념을 설명합니다.
 
