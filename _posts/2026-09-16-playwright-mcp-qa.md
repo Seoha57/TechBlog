@@ -17,9 +17,10 @@ QA 업무에서 테스트 자동화를 시작할 때 가장 먼저 생기는 질
   <div class="quick-answer"><h3>Q. 바로 운영 시스템에 연결해도 되나요?</h3><p>A. 테스트 계정과 비식별 데이터를 사용하는 별도 환경에서 검증한 뒤, 승인된 시나리오만 CI에 연결해야 합니다.</p></div>
 </section>
 
-![Playwright MCP 테스트 흐름]({{ '/assets/images/playwright-mcp-flow.svg' | relative_url }})
-
-*이미지 출처: 직접 제작*
+<figure class="article-figure">
+  <img src="{{ '/assets/images/playwright-mcp-flow.svg' | relative_url }}" alt="Playwright MCP 테스트 흐름">
+  <figcaption>이미지 출처: ChatGPT 생성</figcaption>
+</figure>
 
 ## Playwright MCP는 무엇인가
 
