@@ -1,4 +1,4 @@
-.article-nav{max-width:760px;margin:42px auto 8px;padding-top:20px;border-top:1px solid var(--line)}
+.article-nav{max-width:760px;margin:42px auto 0;padding-top:20px;border-top:1px solid var(--line)}
 .article-nav-home{display:inline-block;color:var(--ink);font-weight:750;text-decoration:none}
 .article-nav-home span{margin-left:12px;color:var(--accent);font-size:20px}
 .article-nav-links{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
