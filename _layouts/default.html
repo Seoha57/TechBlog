@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% feed_meta %}
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}">운영의 기술<span>.</span></a>
+      <nav>
+        <a href="{{ '/' | relative_url }}#articles">Articles</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+    </header>
+    <main>{{ content }}</main>
+    <footer class="site-footer">
+      <strong>운영의 기술.</strong>
+      <span>QA · DBA · Infrastructure</span>
+    </footer>
+  </body>
+</html>
