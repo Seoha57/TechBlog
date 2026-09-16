@@ -11,9 +11,9 @@ layout: default
 <section class="tracks">
   <p class="section-label">WHAT I AM LEARNING</p>
   <div class="track-grid">
-    <a class="track-card" href="#articles"><span class="track-number">01</span><h2>QA</h2><p>테스트 자동화<br>품질과 성능 검증</p><span class="track-arrow">↗</span></a>
-    <a class="track-card" href="#articles"><span class="track-number">02</span><h2>DBA</h2><p>SQL과 PostgreSQL<br>데이터베이스 운영</p><span class="track-arrow">↗</span></a>
-    <a class="track-card" href="#articles"><span class="track-number">03</span><h2>인프라</h2><p>Linux와 Kubernetes<br>배포와 관측성</p><span class="track-arrow">↗</span></a>
+    <a class="track-card" href="{{ '/categories/qa/' | relative_url }}"><span class="track-number">01</span><h2>QA</h2><p>테스트 자동화<br>품질과 성능 검증</p><span class="track-arrow">↗</span></a>
+    <a class="track-card" href="{{ '/categories/dba/' | relative_url }}"><span class="track-number">02</span><h2>DBA</h2><p>SQL과 PostgreSQL<br>데이터베이스 운영</p><span class="track-arrow">↗</span></a>
+    <a class="track-card" href="{{ '/categories/infrastructure/' | relative_url }}"><span class="track-number">03</span><h2>인프라</h2><p>Linux와 Kubernetes<br>배포와 관측성</p><span class="track-arrow">↗</span></a>
   </div>
 </section>
 
@@ -25,7 +25,7 @@ layout: default
 <section id="articles" class="articles">
   <div class="section-heading"><h2>최신 아티클</h2><span>{{ site.posts.size }} articles</span></div>
   <div class="filters">
-    <a class="active" href="#articles">전체</a><a href="#articles">QA</a><a href="#articles">DBA</a><a href="#articles">Infrastructure</a><a href="#articles">Observability</a>
+    <a class="active" href="{{ '/' | relative_url }}#articles">전체</a><a href="{{ '/categories/qa/' | relative_url }}">QA</a><a href="{{ '/categories/dba/' | relative_url }}">DBA</a><a href="{{ '/categories/infrastructure/' | relative_url }}">Infrastructure</a><a href="{{ '/' | relative_url }}#articles">Observability</a>
   </div>
   <div class="post-list">
     {% for post in site.posts %}
