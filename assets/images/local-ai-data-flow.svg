@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">상용 AI 앱과 API 연동의 데이터 흐름</title>
+  <desc id="desc">상용 AI 앱 사용과 내 앱에서 상용 API를 호출할 때 질문과 문서 조각이 이동하는 경로를 비교한다</desc>
+  <rect width="1200" height="650" fill="#fbfcfa"/>
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="68" font-size="30" font-weight="700" fill="#18201c">화면이 내 PC에 있어도, 모델이 어디서 답하는지는 별개입니다</text>
+    <text x="70" y="104" font-size="17" fill="#6e7972">질문과 문서 조각이 어느 경계 밖으로 이동하는지 확인합니다.</text>
+
+    <line x1="70" y1="148" x2="1130" y2="148" stroke="#dfe8e1" stroke-width="2"/>
+    <text x="70" y="190" font-size="18" font-weight="700" fill="#51705f">A. 상용 AI 앱을 직접 사용</text>
+    <circle cx="150" cy="258" r="43" fill="#e0f1e8"/><text x="127" y="264" font-size="17" font-weight="700" fill="#18201c">사용자</text>
+    <path d="M200 258h120m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <rect x="340" y="215" width="208" height="86" rx="16" fill="#ffffff" stroke="#c5decf" stroke-width="2"/>
+    <text x="379" y="251" font-size="18" font-weight="700" fill="#18201c">제공사 앱</text><text x="379" y="278" font-size="14" fill="#6e7972">웹 · 데스크톱 UI</text>
+    <path d="M568 258h120m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <rect x="708" y="195" width="360" height="126" rx="18" fill="#18201c"/>
+    <text x="742" y="245" font-size="20" font-weight="700" fill="#ffffff">제공사 클라우드 모델</text><text x="742" y="276" font-size="14" fill="#b8d7c3">질문과 첨부 내용이 제품 흐름에 따라 전송</text>
+
+    <line x1="70" y1="365" x2="1130" y2="365" stroke="#dfe8e1" stroke-width="2"/>
+    <text x="70" y="407" font-size="18" font-weight="700" fill="#51705f">B. 내 앱이 상용 API를 호출</text>
+    <circle cx="150" cy="486" r="43" fill="#e0f1e8"/><text x="127" y="492" font-size="17" font-weight="700" fill="#18201c">사용자</text>
+    <path d="M200 486h80m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <rect x="300" y="435" width="250" height="102" rx="16" fill="#ffffff" stroke="#c5decf" stroke-width="2"/>
+    <text x="334" y="474" font-size="18" font-weight="700" fill="#18201c">내 로컬 앱</text><text x="334" y="501" font-size="14" fill="#6e7972">문서 검색 · 프롬프트 조합</text>
+    <rect x="336" y="553" width="178" height="47" rx="12" fill="#dcefe2"/>
+    <text x="367" y="583" font-size="15" font-weight="700" fill="#18201c">로컬 문서</text>
+    <path d="M425 552v-14" fill="none" stroke="#65ae91" stroke-width="3"/>
+    <path d="M550 486h110m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <rect x="680" y="420" width="388" height="132" rx="18" fill="#fff7ec" stroke="#e5c98e" stroke-width="2"/>
+    <text x="714" y="466" font-size="19" font-weight="700" fill="#18201c">상용 모델 API</text>
+    <text x="714" y="495" font-size="14" fill="#765d2e">선택된 질문·문서 조각이 외부 추론으로 전송</text>
+    <text x="714" y="521" font-size="14" fill="#765d2e">API 키 · 비용 · 로그 정책은 내 앱이 관리</text>
+  </g>
+</svg>

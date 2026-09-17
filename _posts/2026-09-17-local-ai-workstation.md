@@ -69,6 +69,8 @@ Anthropic의 Claude 모델은 공식적으로 API와 클라우드 플랫폼을 �
 
 다만 OpenAI의 **gpt-oss**처럼 공개 가중치(open-weight)로 제공되는 모델은 예외입니다. gpt-oss는 Apache 2.0 라이선스로 모델 가중치를 내려받아 Ollama, LM Studio, vLLM 같은 실행기에서 내 인프라로 운영할 수 있습니다. 하지만 이것은 ChatGPT나 OpenAI API에서 제공되는 일반 GPT 모델과는 별도 모델이며, OpenAI API를 통해 제공되지 않습니다. [OpenAI gpt-oss 안내](https://help.openai.com/en/articles/11870455), [OpenAI Open Models](https://openai.com/open-models/)
 
+<figure class="article-figure"><img src="{{ '/assets/images/local-ai-data-flow.svg' | relative_url }}" alt="상용 AI 앱 직접 사용과 내 로컬 앱의 상용 API 호출에서 질문과 문서가 이동하는 경로"><figcaption>이미지 출처: 직접 제작</figcaption></figure>
+
 ### 3.1 로컬 전용, API 연동, 하이브리드의 선택 기준
 
 개인 AI 구성은 보통 세 가지 중 하나입니다.
