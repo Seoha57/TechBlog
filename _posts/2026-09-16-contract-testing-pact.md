@@ -12,7 +12,7 @@ Contract Testing은 서비스 사이의 약속, 즉 계약을 테스트하는 �
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. Contract Testing은 API 통합 테스트와 같은가요?</h3><p>A. 목적이 다릅니다. 통합 테스트가 여러 서비스를 실제 환경에 연결해 전체 흐름을 확인한다면, Contract Testing은 각 서비스가 상대방과 합의한 요청·응답 형식을 지키는지 빠르게 확인합니다.</p></div><div class="quick-answer"><h3>Q. Pact는 누가 계약을 작성하나요?</h3><p>A. 대표적인 Consumer-Driven Contract 방식에서는 소비자가 필요한 상호작용을 예시로 작성합니다. 제공자는 그 계약을 받아 실제 API가 약속을 지키는지 검증합니다.</p></div><div class="quick-answer"><h3>Q. 모든 API 테스트를 Pact로 바꿔야 하나요?</h3><p>A. 아닙니다. 비즈니스 규칙, 부하, 인증, 실제 인프라 연동은 별도의 테스트가 필요합니다. Pact는 서비스 경계의 호환성 문제를 줄이는 데 초점을 둡니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/contract-testing-pact-flow.svg' | relative_url }}" alt="Pact를 활용한 Contract Testing 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/sources/pact-contract-process.png' | relative_url }}" alt="Pact Consumer와 Provider의 계약 검증 흐름"><figcaption>이미지 출처: <a href="https://github.com/pact-foundation/pact-go/blob/master/docs/diagrams/summary.png">Pact Go 공식 다이어그램</a> (MIT License)</figcaption></figure>
 
 ## 1. Contract Testing이 필요한 이유
 
@@ -135,8 +135,6 @@ Contract Testing은 API 전체를 한 번에 검증하는 방법이라기보다,
 도입할 때는 먼저 하나의 호출 관계를 고르는 편이 좋습니다. 예를 들어 주문 서비스와 결제 서비스 사이에서 자주 깨지는 응답 필드 몇 개를 계약으로 표현하고, Consumer 테스트와 Provider 검증을 연결한 뒤, 배포 판단에 필요한 버전 정보를 추가하는 식입니다. 이후 오류 응답, 여러 환경, Broker 운영으로 범위를 넓힐 수 있습니다.
 
 결국 중요한 것은 도구의 이름보다 테스트의 질문입니다. “서비스 전체가 완벽히 동작하는가?”와 “이 소비자가 기대하는 약속을 제공자가 지키는가?”는 서로 다른 질문입니다. 두 질문을 분리하면 QA는 빠른 계약 검증과 넓은 통합 검증을 각각 적절한 위치에 둘 수 있습니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/contract-testing-feedback.svg' | relative_url }}" alt="Contract Testing이 API 변경을 검증하는 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

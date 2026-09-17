@@ -19,7 +19,7 @@ PostgreSQL 18에서 가장 주목할 만한 변화 중 하나는 비동기 I/O(A
 
 <figure class="article-figure">
   <img src="{{ '/assets/images/postgresql18-aio-flow.svg' | relative_url }}" alt="PostgreSQL 18 비동기 I/O 처리 흐름">
-  <figcaption>이미지 출처: ChatGPT 생성</figcaption>
+  <figcaption>이미지 출처: <a href="https://www.postgresql.org/docs/18/release-18.html">PostgreSQL 18 Release Notes</a>를 바탕으로 재구성</figcaption>
 </figure>
 
 ## 데이터베이스 I/O가 병목이 되는 이유
@@ -100,8 +100,6 @@ WHERE order_date >= DATE '2026-01-01'
 </section>
 
 PostgreSQL 18의 AIO는 DBA가 스토리지와 데이터베이스 실행을 함께 바라보게 만드는 변화입니다. 하지만 새로운 설정 하나로 성능 문제가 자동 해결되는 기능은 아닙니다. 공식 문서와 공개 연구의 조건을 읽고, 자신의 workload가 어떤 I/O 패턴을 가지는지 판단하는 과정이 먼저입니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/postgresql18-aio-decision.svg' | relative_url }}" alt="PostgreSQL AIO 적용 전 병목 판단 기준"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

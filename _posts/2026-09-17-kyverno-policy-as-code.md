@@ -12,7 +12,7 @@ Kubernetes 클러스터에서 애플리케이션을 배포할 때 YAML 파일은
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. Kubernetes 정책은 왜 필요한가요?</h3><p>A. YAML 배포가 늘수록 사람마다 다른 설정이 들어갈 수 있기 때문입니다. 정책은 배포 전에 공통 기준을 검사해 운영 실수와 통제 누락을 줄이는 방법입니다.</p></div><div class="quick-answer"><h3>Q. Kyverno는 보안 도구인가요?</h3><p>A. 보안에 많이 쓰이지만 범위는 더 넓습니다. 레이블, 리소스 제한, 이미지 출처, 네임스페이스 표준, 운영 메타데이터 등 클러스터 운영 기준을 검증·변경·생성할 수 있습니다.</p></div><div class="quick-answer"><h3>Q. 바로 배포를 차단해도 될까요?</h3><p>A. 권장하지 않습니다. 먼저 Audit 방식으로 위반 현황을 보고, 예외와 마이그레이션 계획을 정한 뒤 필요한 기준만 Enforce로 전환하는 편이 안전합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/kyverno-policy-flow.svg' | relative_url }}" alt="Kyverno Policy as Code 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/kyverno-policy-flow.svg' | relative_url }}" alt="Kyverno Audit 정책 결과 예시"><figcaption>이미지 출처: <a href="https://kyverno.io/docs/guides/reports/">Kyverno Policy Reports 문서</a>를 바탕으로 재구성</figcaption></figure>
 
 ## Kubernetes 정책과 Admission Control부터 이해하기
 
@@ -107,8 +107,6 @@ Kyverno는 최근 CEL 기반 정책 유형으로 발전하고 있습니다. 공�
 <section class="quick-answers"><p class="quick-label">한계와 적용 기준</p><div class="quick-answer"><h3>Q. Kyverno가 있으면 코드 리뷰가 필요 없나요?</h3><p>A. 아닙니다. Kyverno는 선언된 기준을 자동 검사할 뿐, 아키텍처 적절성이나 업무 영향은 판단하지 못합니다. 코드·YAML 리뷰와 정책 검증은 함께 필요합니다.</p></div><div class="quick-answer"><h3>Q. OPA와 Kyverno 중 무엇이 더 좋은가요?</h3><p>A. 목적과 팀 역량에 따라 다릅니다. Kyverno는 Kubernetes YAML 중심 정책을 시작하기 쉽고, OPA는 여러 시스템에 적용할 수 있는 범용 정책 엔진입니다. 먼저 해결하려는 통제 문제를 정하는 편이 중요합니다.</p></div><div class="quick-answer"><h3>Q. ITGC 대응을 Kyverno 하나로 할 수 있나요?</h3><p>A. 아닙니다. 정책은 기술적 통제의 일부입니다. 접근 권한, 변경 승인, 증적 보관, 장애 대응, 검토 절차는 조직의 통제 체계 안에서 별도로 관리해야 합니다.</p></div></section>
 
 Kyverno는 Kubernetes 배포 기준을 사람의 기억에서 정책 코드로 옮기는 도구입니다. 취준생 관점에서는 Admission Control, 정책 검증, Audit과 Enforce의 차이부터 이해하면 충분한 출발점이 됩니다. 운영 관점에서는 작은 기준부터 자동화하고, 결과를 변경관리와 개선 활동에 연결하는 것이 핵심입니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/kyverno-audit-enforce.svg' | relative_url }}" alt="Kyverno Audit에서 Enforce로 전환하는 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

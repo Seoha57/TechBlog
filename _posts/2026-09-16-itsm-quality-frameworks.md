@@ -12,7 +12,7 @@ tags: [qa, itsm, itil, iso9001, iso20000, cmmi, quality-management]
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. ITIL, ISO 9001, ISO/IEC 20000, CMMI는 모두 같은 것인가요?</h3><p>A. 아닙니다. ITIL은 IT 서비스 관리의 좋은 실천 방법을 설명하는 프레임워크이고, ISO 9001은 품질경영시스템 요구사항, ISO/IEC 20000은 서비스관리시스템 요구사항, CMMI는 조직의 프로세스 능력과 성과 개선을 다루는 모델입니다.</p></div><div class="quick-answer"><h3>Q. 이 프레임워크를 써봤다는 말은 어떤 업무를 했다는 뜻인가요?</h3><p>A. 보통 장애·변경·요청 관리, SLA와 KPI 관리, 표준 절차와 기록 유지, 내부 감사 대응, 원인 분석과 개선 활동처럼 운영을 반복 가능하게 만드는 업무를 의미합니다. 회사마다 실제 용어와 범위는 다를 수 있습니다.</p></div><div class="quick-answer"><h3>Q. 경험이 없으면 면접에서 어떻게 말해야 하나요?</h3><p>A. 사용 경험이 있다고 과장하기보다, 각 프레임워크의 목적을 이해하고 현재 경험한 테스트·장애·변경·문서화 활동을 어떤 개념과 연결할 수 있는지 설명하는 편이 안전합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/itsm-quality-frameworks-flow.svg' | relative_url }}" alt="ITSM과 품질 관리 프레임워크의 관점 비교"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/itsm-quality-frameworks-flow.svg' | relative_url }}" alt="ITSM과 품질 관리 프레임워크의 질문 지도"><figcaption>이미지 출처: <a href="https://www.iso.org/standard/81165.html">ISO/IEC TS 20000-11</a> 및 CMMI 공개 자료를 바탕으로 재구성</figcaption></figure>
 
 ## 1. 먼저 ITSM부터 이해하기
 
@@ -161,8 +161,6 @@ QA가 운영 관리 역할과 협업할 때는 테스트 결과를 “통과/실
 ITIL은 서비스 운영 실천의 언어, ISO 9001은 품질경영시스템의 기준, ISO/IEC 20000은 IT 서비스관리시스템의 요구사항, CMMI는 프로세스 능력과 성과 개선의 관점으로 구분하면 됩니다. 실제 적용에서는 이 체계들이 겹치는 부분을 조직의 규모와 목적에 맞게 조합합니다.
 
 경험이 없다면 먼저 현재 했던 테스트·장애·변경·문서화 활동을 사실대로 정리하고, 각 활동이 어떤 운영 질문에 답했는지 연결해 보세요. 그 다음 가상의 서비스 하나를 정해 장애 기록, 변경 요청, 테스트 증거, RCA, 개선 지표를 만들어 보면 프레임워크가 추상적인 용어에서 실제 업무 흐름으로 바뀌기 시작합니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/itsm-framework-map.svg' | relative_url }}" alt="ITSM ITIL ISO CMMI의 실무 질문 비교"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

@@ -12,7 +12,7 @@ OpenTofu는 사람이 읽을 수 있는 설정 파일로 클라우드와 온프�
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. OpenTofu는 서버를 만드는 스크립트인가요?</h3><p>A. 단순 실행 스크립트보다 선언형 도구에 가깝습니다. “VPC 하나, 서브넷 두 개, DB 하나”처럼 원하는 상태를 작성하면 OpenTofu가 현재 상태와 비교해 필요한 변경 계획을 만듭니다.</p></div><div class="quick-answer"><h3>Q. state는 왜 필요한가요?</h3><p>A. 코드에 적힌 리소스와 실제 생성된 리소스를 연결하기 위해 필요합니다. state에는 실제 리소스 ID와 관리 대상 정보가 들어갈 수 있으므로 저장 위치·권한·잠금이 중요합니다.</p></div><div class="quick-answer"><h3>Q. IaC를 쓰면 수동 변경을 못 하나요?</h3><p>A. 기술적으로는 가능하지만, 코드와 실제 환경의 차이(drift)를 만들 수 있습니다. 긴급 변경은 절차를 남기고 이후 코드와 state를 일치시키는 관리가 필요합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/opentofu-state-flow.svg' | relative_url }}" alt="OpenTofu 코드와 상태, 실제 인프라 관계"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/opentofu-state-flow.svg' | relative_url }}" alt="OpenTofu plan 변경 검토 예시"><figcaption>이미지 출처: <a href="https://opentofu.org/docs/intro/core-workflow/">OpenTofu Core Workflow 문서</a>를 바탕으로 재구성</figcaption></figure>
 
 ## IaC는 무엇을 바꾸는가
 
@@ -104,8 +104,6 @@ OpenTofu는 ITGC 자체가 아니라 인프라 변경 통제를 구현하는 한
 <section class="quick-answers"><p class="quick-label">한계와 적용 기준</p><div class="quick-answer"><h3>Q. 작은 환경에도 OpenTofu가 필요한가요?</h3><p>A. 한두 개의 실습 리소스에는 설정 부담이 클 수 있습니다. 반복 생성, 여러 환경, 팀 협업, 변경 이력 관리가 필요해질 때 가치가 커집니다.</p></div><div class="quick-answer"><h3>Q. state를 Git에 저장해도 되나요?</h3><p>A. 권장하지 않습니다. state에는 리소스 상세 정보와 민감한 값이 포함될 수 있습니다. 접근 제어와 잠금을 제공하는 원격 backend를 검토하는 편이 안전합니다.</p></div><div class="quick-answer"><h3>Q. apply 실패 후 state를 강제로 고쳐도 되나요?</h3><p>A. `state push`나 force-unlock은 위험한 복구 수단입니다. 먼저 원격 state와 실제 리소스, 잠금 소유자를 확인하고 백업과 팀 합의 후 제한적으로 사용해야 합니다.</p></div></section>
 
 OpenTofu를 배운다는 것은 `.tf` 문법만 외우는 일이 아닙니다. 코드·계획·state·실제 인프라의 관계와, 팀이 동시에 변경할 때 필요한 권한·잠금·검토 흐름을 이해하는 일입니다. 취준생이라면 작은 dev 환경에서 plan 결과를 읽고, state가 무엇을 기록하는지 확인하는 것부터 시작하면 좋습니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/opentofu-change-cycle.svg' | relative_url }}" alt="OpenTofu 인프라 변경 검토 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

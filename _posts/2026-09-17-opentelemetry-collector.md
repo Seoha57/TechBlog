@@ -12,7 +12,7 @@ tags: [infrastructure, opentelemetry, collector, observability, monitoring]
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. OpenTelemetry Collector는 모니터링 화면인가요?</h3><p>A. 아닙니다. 데이터를 수신·처리·전송하는 중계 계층입니다. Grafana, Prometheus, Jaeger, Datadog 같은 관측 백엔드가 데이터를 저장하고 조회·시각화하는 역할을 합니다.</p></div><div class="quick-answer"><h3>Q. SDK가 있는데 Collector가 왜 필요한가요?</h3><p>A. SDK는 애플리케이션에서 trace·metric·log를 만들고, Collector는 여러 데이터를 공통 방식으로 받으며 필터·배치·변환 후 목적지로 보낼 수 있습니다.</p></div><div class="quick-answer"><h3>Q. Collector 하나로 모든 장애를 찾을 수 있나요?</h3><p>A. 아닙니다. 데이터가 있어도 어떤 서비스 수준 목표를 볼지, 어떤 알람을 만들지, 로그의 민감 정보를 어떻게 처리할지는 별도로 설계해야 합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/otel-collector-flow.svg' | relative_url }}" alt="OpenTelemetry Collector 데이터 파이프라인"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/otel-collector-flow.svg' | relative_url }}" alt="OpenTelemetry Collector 데이터 파이프라인"><figcaption>이미지 출처: <a href="https://opentelemetry.io/docs/collector/architecture/">OpenTelemetry Collector Architecture</a>를 바탕으로 재구성 (CC BY 4.0)</figcaption></figure>
 
 ## 관측성의 세 신호: Trace·Metric·Log
 
@@ -111,8 +111,6 @@ Kubernetes에서는 resource attribute를 잘 설계하는 것이 특히 중요�
 <section class="quick-answers"><p class="quick-label">한계와 적용 기준</p><div class="quick-answer"><h3>Q. Collector가 있으면 애플리케이션에 SDK를 넣지 않아도 되나요?</h3><p>A. 일부 자동 계측과 인프라 수집은 가능하지만, 결제 승인이나 주문 생성처럼 업무 의미가 있는 span은 SDK나 코드 기반 계측이 더 정확할 수 있습니다. Collector와 SDK는 보완 관계입니다.</p></div><div class="quick-answer"><h3>Q. 모든 로그를 Collector로 보내면 되나요?</h3><p>A. 아닙니다. 로그량·비용·개인정보를 고려해야 합니다. 장애 분석에 필요한 구조화된 로그와 보존 정책을 먼저 정하고, 불필요한 원문·민감 속성은 줄이는 편이 좋습니다.</p></div><div class="quick-answer"><h3>Q. 관측 백엔드를 바꾸면 설정이 전혀 안 바뀌나요?</h3><p>A. 애플리케이션 변경을 줄일 수는 있지만 exporter, 인증, 데이터 모델, 대시보드·알람은 검토해야 합니다. Collector가 모든 이식성 문제를 제거하는 것은 아닙니다.</p></div></section>
 
 OpenTelemetry Collector는 관측 데이터를 수집하는 애플리케이션과 데이터를 보는 백엔드 사이를 연결하는 운영 계층입니다. 취준생이라면 Trace·Metric·Log의 차이, Receiver·Processor·Exporter의 역할, Kubernetes에서의 배포 방식부터 이해하면 충분합니다. 이후에는 실제 서비스의 장애 질문 하나를 정하고, 어떤 신호를 어디에서 수집할지 설계해 보면 개념이 더 선명해집니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/otel-collector-deployment.svg' | relative_url }}" alt="OpenTelemetry Collector 배포 방식 비교"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

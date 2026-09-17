@@ -16,7 +16,7 @@ OpenTelemetry 자체가 완성된 모니터링 화면을 제공하는 제품은 
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. eBPF 자동 계측은 코드를 전혀 수정하지 않나요?</h3><p>A. 공식 소개에서는 코드 수정과 애플리케이션 재시작 없이 기본적인 신호를 수집하는 방식을 설명합니다. 다만 모든 비즈니스 로직과 내부 함수의 의미까지 자동으로 알 수 있다는 뜻은 아닙니다.</p></div><div class="quick-answer"><h3>Q. 기존 OpenTelemetry SDK를 대체하나요?</h3><p>A. 대체보다는 보완에 가깝습니다. eBPF는 서비스 간 흐름과 기본 요청 지표를 빠르게 확보하고, SDK는 비즈니스 구간과 세부 span을 표현하는 데 유리합니다.</p></div><div class="quick-answer"><h3>Q. 바로 운영 클러스터에 설치해도 되나요?</h3><p>A. 권장하지 않습니다. 커널·권한·지원 프로토콜·수집 데이터의 민감도를 먼저 확인하고, 제한된 환경에서 관측 범위와 비용을 검토해야 합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/otel-ebpf-flow.svg' | relative_url }}" alt="OpenTelemetry eBPF 자동 계측 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/sources/otel-obi-architecture.svg' | relative_url }}" alt="OpenTelemetry eBPF Instrumentation의 공식 아키텍처"><figcaption>이미지 출처: <a href="https://opentelemetry.io/docs/zero-code/obi/">OpenTelemetry eBPF Instrumentation 문서</a> (CC BY 4.0)</figcaption></figure>
 
 ## OpenTelemetry와 자동 계측
 
@@ -71,8 +71,6 @@ SDK 계측과 eBPF 계측은 경쟁 관계라기보다 서로 다른 질문에 �
 <section class="quick-answers"><p class="quick-label">인프라 적용 Q&A</p><div class="quick-answer"><h3>Q. 기존 모니터링 시스템이 있어도 필요한가요?</h3><p>A. 기존 시스템이 모든 서비스의 흐름을 일관되게 보여주지 못한다면 보완 수단이 될 수 있습니다. 다만 이미 충분한 SDK 계측이 되어 있다면 중복 수집과 비용부터 검토해야 합니다.</p></div><div class="quick-answer"><h3>Q. eBPF가 애플리케이션 성능에 영향을 주지 않나요?</h3><p>A. 영향이 없다고 단정할 수 없습니다. 수집 범위와 이벤트 수, 노드 수, 에이전트 설정에 따라 비용이 달라질 수 있으므로 공개 자료와 운영 환경의 정책을 함께 확인해야 합니다.</p></div><div class="quick-answer"><h3>Q. 어떤 서비스부터 적용하는 것이 좋나요?</h3><p>A. 계측이 부족하지만 서비스 간 호출 흐름이 중요한 환경, 여러 언어가 섞인 환경, 재빌드가 어려운 레거시 서비스부터 검토할 수 있습니다.</p></div></section>
 
 OpenTelemetry eBPF 자동 계측은 코드 변경을 줄이면서 서비스 흐름을 파악할 수 있는 새로운 선택지입니다. 그렇다고 SDK 계측이나 기존 모니터링을 모두 대체하는 기술은 아닙니다. eBPF가 제공하는 넓은 관측 범위와 SDK가 제공하는 업무 의미를 구분하고, 보안 권한과 데이터 수집 범위를 함께 설계해야 합니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/otel-ebpf-signal-scope.svg' | relative_url }}" alt="SDK와 eBPF 자동 계측의 관측 범위"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

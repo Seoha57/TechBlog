@@ -12,7 +12,7 @@ AI 검색이나 추천 기능을 이야기할 때 벡터 데이터베이스라�
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. pgvector는 PostgreSQL을 벡터 데이터베이스로 바꾸나요?</h3><p>A. PostgreSQL에 벡터 타입과 유사도 연산, 인덱스를 추가하는 확장입니다. 기존 관계형 기능을 유지하면서 벡터 검색을 함께 다루는 선택지에 가깝습니다.</p></div><div class="quick-answer"><h3>Q. pgvector를 쓰면 별도의 벡터 DB가 필요 없나요?</h3><p>A. 데이터 규모와 검색 요구에 따라 다릅니다. 기존 관계형 데이터와 벡터를 조인해야 하거나 시스템 수를 늘리고 싶지 않다면 pgvector가 적합할 수 있고, 대규모 검색 전용 운영 요구가 크다면 다른 선택지를 비교해야 합니다.</p></div><div class="quick-answer"><h3>Q. HNSW가 항상 가장 빠른가요?</h3><p>A. 그렇다고 단정할 수 없습니다. 공식 문서는 HNSW가 속도와 재현율의 절충에서 유리할 수 있지만 메모리와 인덱스 생성 비용이 더 크다고 설명합니다. 데이터와 목표에 맞춰 비교해야 합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/postgresql-pgvector-flow.svg' | relative_url }}" alt="PostgreSQL과 pgvector를 이용한 벡터 검색 흐름"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/postgresql-pgvector-flow.svg' | relative_url }}" alt="PostgreSQL과 pgvector를 이용한 벡터 검색 흐름"><figcaption>이미지 출처: <a href="https://github.com/pgvector/pgvector">pgvector 공식 문서</a>를 바탕으로 재구성</figcaption></figure>
 
 ## 1. 벡터 검색은 무엇을 검색하는가
 
@@ -156,8 +156,6 @@ PostgreSQL에 pgvector를 붙이는 방식은 기존 관계형 데이터와 벡�
 반대로 벡터 검색이 필요한 이유와 품질 기준이 정리되지 않은 상태에서 확장부터 설치하면 운영 복잡성만 늘어날 수 있습니다. 먼저 정확한 검색과 근사 검색의 차이, 모델 버전, 필터 조건, 삭제 정책을 정하고 작은 범위의 평가 데이터로 비교하는 것이 좋습니다.
 
 DBA 관점에서 pgvector는 단순한 AI 기능이 아니라 새로운 데이터 타입과 인덱스, 저장 공간, 유지보수 주기를 PostgreSQL 운영 안에 포함하는 일입니다. 따라서 “어떤 벡터 DB가 더 빠른가?”보다 “우리 데이터의 관계형 조건과 검색 품질을 어떤 경계에서 관리할 것인가?”를 먼저 질문하는 편이 더 현실적인 출발점입니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/pgvector-search-choice.svg' | relative_url }}" alt="pgvector 검색 방식 선택 기준"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

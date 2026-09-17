@@ -20,8 +20,8 @@ QA 업무에서 테스트 자동화를 시작할 때 가장 먼저 생기는 질
 </section>
 
 <figure class="article-figure">
-  <img src="{{ '/assets/images/playwright-mcp-flow.svg' | relative_url }}" alt="Playwright MCP 테스트 흐름">
-  <figcaption>이미지 출처: ChatGPT 생성</figcaption>
+  <img src="{{ '/assets/images/sources/playwright-trace-viewer.png' | relative_url }}" alt="Playwright Trace Viewer 화면">
+  <figcaption>이미지 출처: <a href="https://playwright.dev/docs/trace-viewer">Playwright Trace Viewer 문서</a> (CC BY 4.0)</figcaption>
 </figure>
 
 ## Playwright MCP는 무엇인가
@@ -104,8 +104,6 @@ Playwright MCP는 QA 업무의 시작점을 바꿀 가능성이 있습니다. �
 하지만 자동화의 품질은 AI가 만든 동작의 개수가 아니라, 사람이 기대 결과를 얼마나 명확하게 정의했는지에 달려 있습니다. MCP가 클릭에 성공했다는 사실과 서비스가 올바르게 동작했다는 사실은 다릅니다. 테스트 데이터, 예외 조건, assertion, 실패 증거를 QA 기준으로 검토해야 합니다.
 
 이 글의 결론은 간단합니다. MCP로 빠르게 탐색하고, Playwright 코드로 반복 가능하게 만들고, QA 리뷰로 의미를 확인합니다. 세 단계를 분리하면 새로운 기술을 검토하면서도 기존 테스트 품질 기준을 유지할 수 있습니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/playwright-mcp-test-layers.svg' | relative_url }}" alt="웹 테스트 자동화 시나리오 선택 기준"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 

@@ -14,7 +14,7 @@ Gateway API는 이런 문제를 해결하기 위해 Kubernetes 생태계에서 �
 
 <section class="quick-answers"><p class="quick-label">먼저 답하면</p><div class="quick-answer"><h3>Q. Gateway API는 Ingress의 새 버전인가요?</h3><p>A. 단순한 버전 업그레이드라기보다, 서비스 네트워킹을 위한 별도의 리소스 모델입니다. Ingress보다 역할 분리와 표현력이 강하고, 기존 Ingress를 한 번에 자동 대체하는 리소스는 아닙니다.</p></div><div class="quick-answer"><h3>Q. Gateway API를 쓰면 컨트롤러가 필요 없나요?</h3><p>A. 필요합니다. Gateway API는 표준 리소스와 동작 규칙을 정의하고, 실제 로드밸런서나 프록시를 구성하는 구현체는 별도로 제공합니다.</p></div><div class="quick-answer"><h3>Q. 모든 Kubernetes 서비스가 바로 지원하나요?</h3><p>A. 구현체마다 지원 범위와 릴리스 채널이 다릅니다. 사용하는 클라우드·Ingress 컨트롤러·서비스 메시의 Gateway API 지원 상태와 conformance 정보를 먼저 확인해야 합니다.</p></div></section>
 
-<figure class="article-figure"><img src="{{ '/assets/images/kubernetes-gateway-api-flow.svg' | relative_url }}" alt="Kubernetes Gateway API 리소스 관계"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+<figure class="article-figure"><img src="{{ '/assets/images/sources/kubernetes-gateway-relationships.svg' | relative_url }}" alt="GatewayClass, Gateway, HTTPRoute의 공식 관계도"><figcaption>이미지 출처: <a href="https://kubernetes.io/docs/concepts/services-networking/gateway/">Kubernetes Gateway API 문서</a> (CC BY 4.0)</figcaption></figure>
 
 ## 1. 외부 트래픽은 어떤 흐름으로 들어오는가
 
@@ -224,8 +224,6 @@ Gateway API의 핵심은 Ingress보다 리소스가 많다는 사실이 아니�
 이 구조는 멀티팀 클러스터와 복잡한 트래픽 정책에서 장점이 있지만, 도입 즉시 모든 문제가 사라지는 기술은 아닙니다. 구현체 지원, 릴리스 채널, cross-namespace 권한, 상태 조건, 관측과 롤백을 함께 설계해야 합니다.
 
 따라서 시작점은 “Ingress를 전부 교체하자”가 아니라 “새로운 서비스 하나의 진입점과 Route 책임을 분리해 볼 수 있는가?”가 적절합니다. 작은 범위에서 컨트롤러의 지원 기능과 운영 모델을 확인한 뒤, 실제 조직의 권한 구조와 맞을 때 점진적으로 넓히는 편이 안전합니다.
-
-<figure class="article-figure"><img src="{{ '/assets/images/gateway-api-role-boundary.svg' | relative_url }}" alt="Kubernetes Gateway API 역할 분리"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
 
 ### 참고 자료
 
