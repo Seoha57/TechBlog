@@ -4,7 +4,7 @@ layout: default
 <section class="hero">
   <p class="eyebrow">OPERATIONS ENGINEERING</p>
   <h1>새로운 기술을 배우는<br><em>운영의 기록</em></h1>
-  <p class="hero-copy">QA, DBA, 인프라를 기반으로 새로운 기술을 배우고<br>검증 기준과 적용 방법을 기록합니다.</p>
+  <p class="hero-copy">QA, DBA, 인프라와 AI를 기반으로 새로운 기술을 배우고<br>검증 기준과 적용 방법을 기록합니다.</p>
   <a class="arrow-link" href="#articles">글 둘러보기 <span>↘</span></a>
 </section>
 
@@ -14,6 +14,7 @@ layout: default
     <a class="track-card" href="{{ '/categories/qa/' | relative_url }}"><span class="track-number">01</span><h2>QA</h2><p>테스트 자동화<br>품질과 성능 검증</p><span class="track-arrow">↗</span></a>
     <a class="track-card" href="{{ '/categories/dba/' | relative_url }}"><span class="track-number">02</span><h2>DBA</h2><p>SQL과 PostgreSQL<br>데이터베이스 운영</p><span class="track-arrow">↗</span></a>
     <a class="track-card" href="{{ '/categories/infrastructure/' | relative_url }}"><span class="track-number">03</span><h2>인프라</h2><p>Linux와 Kubernetes<br>배포와 관측성</p><span class="track-arrow">↗</span></a>
+    <a class="track-card" href="{{ '/categories/ai/' | relative_url }}"><span class="track-number">04</span><h2>AI</h2><p>LLM과 AI 에이전트<br>업무 적용과 검증</p><span class="track-arrow">↗</span></a>
   </div>
 </section>
 
@@ -27,7 +28,7 @@ layout: default
   {% assign latest_posts = visible_posts | slice: 0, 6 %}
   <div class="section-heading"><h2>최신 아티클</h2><span>{{ latest_posts.size }} of {{ visible_posts.size }}</span></div>
   <div class="filters">
-    <a class="active" href="#" data-filter="all">전체</a><a href="#" data-filter="qa">QA</a><a href="#" data-filter="dba">DBA</a><a href="#" data-filter="infrastructure">Infrastructure</a><a href="#" data-filter="observability">Observability</a>
+    <a class="active" href="#" data-filter="all">전체</a><a href="#" data-filter="qa">QA</a><a href="#" data-filter="dba">DBA</a><a href="#" data-filter="infrastructure">Infrastructure</a><a href="#" data-filter="observability">Observability</a><a href="#" data-filter="ai">AI</a>
   </div>
   <div class="post-list">
     {% for post in latest_posts %}

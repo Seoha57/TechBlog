@@ -17,7 +17,7 @@ git pull origin main
 
 ## 2. 글 작성 전 확인
 
-1. 주제를 QA, DBA, Infrastructure 중 하나로 정합니다.
+1. 주제를 QA, DBA, Infrastructure, AI 중 하나로 정합니다.
 2. 최신 기술인지 확인하고 공식 문서·논문·신뢰할 수 있는 기술 블로그를 조사합니다.
 3. 실제로 사용한 기술인지, 공개 자료를 바탕으로 학습하는 주제인지 구분합니다.
 4. 실제 사용 경험이 없다면 “직접 실행했다”, “성능을 측정했다”라고 쓰지 않습니다.
@@ -116,5 +116,6 @@ https://seoha57.github.io/TechBlog/{category}/{slug}/
 - QA: Playwright MCP, Contract Testing/Pact, ITSM·ITIL·ISO·CMMI
 - DBA: PostgreSQL 18 AIO, PostgreSQL + pgvector
 - Infrastructure: OpenTelemetry eBPF, Kubernetes Gateway API
+- AI: LLM, AI 에이전트, 업무 적용과 검증
 
 새 글을 추가할 때는 기존 글과 주제가 겹치는지 확인하고, 같은 설명을 반복하기보다 새로운 관점과 예시를 추가합니다.
