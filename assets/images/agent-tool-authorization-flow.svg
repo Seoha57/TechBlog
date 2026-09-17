@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">AI 에이전트의 업무 도구 호출과 권한 확인 흐름</title>
+  <desc id="desc">사용자 요청이 AI 에이전트의 도구 호출 제안을 거쳐 권한 정책과 사람 승인을 통과한 뒤 업무 시스템으로 전달되는 구조</desc>
+  <rect width="1200" height="650" fill="#fbfcfa"/>
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="72" font-size="30" font-weight="700" fill="#18201c">모델은 제안하고, 권한 시스템은 허용 여부를 결정합니다</text>
+    <text x="70" y="108" font-size="17" fill="#6e7972">에이전트가 업무 도구를 호출할 때는 모델의 판단과 실제 실행 권한을 분리합니다.</text>
+
+    <rect x="70" y="184" width="200" height="126" rx="20" fill="#ffffff" stroke="#c5decf" stroke-width="2"/>
+    <text x="108" y="232" font-size="20" font-weight="700" fill="#18201c">사용자 요청</text>
+    <text x="108" y="264" font-size="15" fill="#6e7972">“장애 티켓을</text><text x="108" y="287" font-size="15" fill="#6e7972">만들어 줘”</text>
+    <path d="M270 247h84m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+
+    <rect x="374" y="184" width="220" height="126" rx="20" fill="#e2f2e7"/>
+    <text x="412" y="232" font-size="20" font-weight="700" fill="#18201c">AI 에이전트</text>
+    <text x="412" y="264" font-size="15" fill="#4d6657">도구 호출을 제안</text><text x="412" y="287" font-size="15" fill="#4d6657">예: create_ticket</text>
+    <path d="M594 247h84m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+
+    <rect x="698" y="163" width="250" height="168" rx="20" fill="#fff7ec" stroke="#e5c98e" stroke-width="2"/>
+    <text x="734" y="211" font-size="20" font-weight="700" fill="#18201c">권한 정책 게이트</text>
+    <text x="734" y="244" font-size="15" fill="#765d2e">사용자 · scope · 대상</text><text x="734" y="270" font-size="15" fill="#765d2e">도구 · 인자 · 위험도 검사</text><text x="734" y="296" font-size="15" fill="#765d2e">허용 / 거부 / 승인 대기</text>
+
+    <path d="M948 247h84m-16-12 16 12-16 12" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <rect x="1052" y="184" width="100" height="126" rx="20" fill="#18201c"/>
+    <text x="1073" y="232" font-size="18" font-weight="700" fill="#ffffff">업무</text><text x="1072" y="259" font-size="18" font-weight="700" fill="#ffffff">시스템</text><text x="1070" y="287" font-size="13" fill="#b8d7c3">ITSM · DB</text>
+
+    <line x1="70" y1="390" x2="1130" y2="390" stroke="#dfe8e1" stroke-width="2"/>
+    <text x="70" y="435" font-size="18" font-weight="700" fill="#51705f">위험도에 따라 실행 경로를 나눕니다</text>
+    <rect x="70" y="470" width="315" height="105" rx="18" fill="#edf6ef"/>
+    <text x="102" y="510" font-size="18" font-weight="700" fill="#18201c">읽기: 자동 허용 가능</text><text x="102" y="541" font-size="15" fill="#4d6657">내가 볼 수 있는 장애 현황 조회</text>
+    <rect x="442" y="470" width="315" height="105" rx="18" fill="#fff7ec"/>
+    <text x="474" y="510" font-size="18" font-weight="700" fill="#18201c">쓰기: 사용자 승인</text><text x="474" y="541" font-size="15" fill="#765d2e">티켓 생성 전 대상·내용을 다시 확인</text>
+    <rect x="814" y="470" width="315" height="105" rx="18" fill="#f8eeee"/>
+    <text x="846" y="510" font-size="18" font-weight="700" fill="#18201c">고위험: 별도 절차</text><text x="846" y="541" font-size="15" fill="#805858">삭제·권한 변경은 역할 승인 또는 차단</text>
+  </g>
+</svg>
