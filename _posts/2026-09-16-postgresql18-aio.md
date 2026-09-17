@@ -101,6 +101,8 @@ WHERE order_date >= DATE '2026-01-01'
 
 PostgreSQL 18의 AIO는 DBA가 스토리지와 데이터베이스 실행을 함께 바라보게 만드는 변화입니다. 하지만 새로운 설정 하나로 성능 문제가 자동 해결되는 기능은 아닙니다. 공식 문서와 공개 연구의 조건을 읽고, 자신의 workload가 어떤 I/O 패턴을 가지는지 판단하는 과정이 먼저입니다.
 
+<figure class="article-figure"><img src="{{ '/assets/images/postgresql18-aio-decision.svg' | relative_url }}" alt="PostgreSQL AIO 적용 전 병목 판단 기준"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+
 ### 참고 자료
 
 - [PostgreSQL 18 Release Notes](https://www.postgresql.org/docs/18/release-18.html)

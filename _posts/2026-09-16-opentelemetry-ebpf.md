@@ -72,6 +72,8 @@ SDK 계측과 eBPF 계측은 경쟁 관계라기보다 서로 다른 질문에 �
 
 OpenTelemetry eBPF 자동 계측은 코드 변경을 줄이면서 서비스 흐름을 파악할 수 있는 새로운 선택지입니다. 그렇다고 SDK 계측이나 기존 모니터링을 모두 대체하는 기술은 아닙니다. eBPF가 제공하는 넓은 관측 범위와 SDK가 제공하는 업무 의미를 구분하고, 보안 권한과 데이터 수집 범위를 함께 설계해야 합니다.
 
+<figure class="article-figure"><img src="{{ '/assets/images/otel-ebpf-signal-scope.svg' | relative_url }}" alt="SDK와 eBPF 자동 계측의 관측 범위"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+
 ### 참고 자료
 
 - [OpenTelemetry eBPF Instrumentation 첫 릴리스](https://opentelemetry.io/blog/2025/obi-announcing-first-release/)

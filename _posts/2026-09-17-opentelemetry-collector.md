@@ -112,6 +112,8 @@ Kubernetes에서는 resource attribute를 잘 설계하는 것이 특히 중요�
 
 OpenTelemetry Collector는 관측 데이터를 수집하는 애플리케이션과 데이터를 보는 백엔드 사이를 연결하는 운영 계층입니다. 취준생이라면 Trace·Metric·Log의 차이, Receiver·Processor·Exporter의 역할, Kubernetes에서의 배포 방식부터 이해하면 충분합니다. 이후에는 실제 서비스의 장애 질문 하나를 정하고, 어떤 신호를 어디에서 수집할지 설계해 보면 개념이 더 선명해집니다.
 
+<figure class="article-figure"><img src="{{ '/assets/images/otel-collector-deployment.svg' | relative_url }}" alt="OpenTelemetry Collector 배포 방식 비교"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+
 ### 참고 자료
 
 - [OpenTelemetry Collector Components](https://opentelemetry.io/docs/collector/components/)

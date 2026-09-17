@@ -225,6 +225,8 @@ Gateway API의 핵심은 Ingress보다 리소스가 많다는 사실이 아니�
 
 따라서 시작점은 “Ingress를 전부 교체하자”가 아니라 “새로운 서비스 하나의 진입점과 Route 책임을 분리해 볼 수 있는가?”가 적절합니다. 작은 범위에서 컨트롤러의 지원 기능과 운영 모델을 확인한 뒤, 실제 조직의 권한 구조와 맞을 때 점진적으로 넓히는 편이 안전합니다.
 
+<figure class="article-figure"><img src="{{ '/assets/images/gateway-api-role-boundary.svg' | relative_url }}" alt="Kubernetes Gateway API 역할 분리"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+
 ### 참고 자료
 
 - [Kubernetes Gateway API 공식 문서](https://kubernetes.io/docs/concepts/services-networking/gateway/)

@@ -162,6 +162,8 @@ ITIL은 서비스 운영 실천의 언어, ISO 9001은 품질경영시스템의 
 
 경험이 없다면 먼저 현재 했던 테스트·장애·변경·문서화 활동을 사실대로 정리하고, 각 활동이 어떤 운영 질문에 답했는지 연결해 보세요. 그 다음 가상의 서비스 하나를 정해 장애 기록, 변경 요청, 테스트 증거, RCA, 개선 지표를 만들어 보면 프레임워크가 추상적인 용어에서 실제 업무 흐름으로 바뀌기 시작합니다.
 
+<figure class="article-figure"><img src="{{ '/assets/images/itsm-framework-map.svg' | relative_url }}" alt="ITSM ITIL ISO CMMI의 실무 질문 비교"><figcaption>이미지 출처: ChatGPT 생성</figcaption></figure>
+
 ### 참고 자료
 
 - [PeopleCert ITIL 4 Foundation 공식 소개](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565)
