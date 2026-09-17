@@ -1,1 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">Kyverno Audit 정책 결과 예시</title><desc id="desc">정책 위반이 Audit 모드에서 PolicyReport로 기록되는 모습</desc><rect width="1200" height="560" fill="#fbfcfa"/><g font-family="Arial, Pretendard, sans-serif"><text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">차단 전에 위반 현황부터 확인하기</text><text x="70" y="105" font-size="17" fill="#6e7972">Kyverno의 Audit 모드는 배포를 허용하되, 정책 위반을 PolicyReport에 남깁니다.</text><rect x="70" y="150" width="500" height="315" rx="16" fill="#18201c"/><g font-family="Consolas, monospace" font-size="17"><text x="105" y="200" fill="#b8d7c3"># policy: require-team-label</text><text x="105" y="240" fill="#fff">kind: ClusterPolicy</text><text x="105" y="272" fill="#fff">validationFailureAction: Audit</text><text x="105" y="304" fill="#fff">match: { kinds: [Pod] }</text><text x="105" y="368" fill="#fff">validate: team label required</text></g><path d="M605 305h80m-18-14 18 14-18 14" stroke="#65ae91" stroke-width="5" fill="none"/><rect x="720" y="150" width="410" height="315" rx="16" fill="#f0f6f1" stroke="#c5decf"/><text x="755" y="200" font-size="18" font-weight="700" fill="#18201c">PolicyReport / payment-api</text><line x1="755" y1="225" x2="1095" y2="225" stroke="#c5decf"/><text x="755" y="270" font-size="15" fill="#6e7972">resource</text><text x="925" y="270" font-size="15" fill="#6e7972">result</text><text x="755" y="310" font-size="17" fill="#18201c">Pod / payment-api</text><rect x="920" y="285" width="82" height="34" rx="17" fill="#f7d9d9"/><text x="942" y="308" font-size="15" fill="#9a3939">fail</text><text x="755" y="355" font-size="15" fill="#6e7972">rule</text><text x="755" y="385" font-size="17" fill="#18201c">require-team-label</text><text x="755" y="425" font-size="15" fill="#6e7972">예외·수정 계획 뒤 Enforce 검토</text><text x="70" y="525" font-size="15" fill="#6e7972">Kyverno Policy Reports 공식 문서의 Audit 예시를 바탕으로 재구성</text></g></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Kyverno Audit 정책 결과 예시</title>
+  <desc id="desc">정책 위반이 Audit 모드에서 PolicyReport로 기록되는 모습</desc>
+  <rect width="1200" height="560" fill="#fbfcfa" />
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">차단 전에 위반 현황부터 확인하기</text>
+    <text x="70" y="105" font-size="17" fill="#6e7972">Kyverno의 Audit 모드는 배포를 허용하되, 정책 위반을 PolicyReport에 남깁니다.</text>
+    <rect x="70" y="150" width="500" height="315" rx="16" fill="#18201c" />
+    <g font-family="Consolas, monospace" font-size="17">
+      <text x="105" y="200" fill="#b8d7c3"># policy: require-team-label</text>
+      <text x="105" y="240" fill="#fff">kind: ClusterPolicy</text>
+      <text x="105" y="272" fill="#fff">validationFailureAction: Audit</text>
+      <text x="105" y="304" fill="#fff">match: { kinds: [Pod] }</text>
+      <text x="105" y="368" fill="#fff">validate: team label required</text>
+    </g>
+    <path d="M605 305h80m-18-14 18 14-18 14" stroke="#65ae91" stroke-width="5" fill="none" />
+    <rect x="720" y="150" width="410" height="315" rx="16" fill="#f0f6f1" stroke="#c5decf" />
+    <text x="755" y="200" font-size="18" font-weight="700" fill="#18201c">PolicyReport / payment-api</text>
+    <line x1="755" y1="225" x2="1095" y2="225" stroke="#c5decf" />
+    <text x="755" y="270" font-size="15" fill="#6e7972">resource</text>
+    <text x="925" y="270" font-size="15" fill="#6e7972">result</text>
+    <text x="755" y="310" font-size="17" fill="#18201c">Pod / payment-api</text>
+    <rect x="920" y="285" width="82" height="34" rx="17" fill="#f7d9d9" />
+    <text x="942" y="308" font-size="15" fill="#9a3939">fail</text>
+    <text x="755" y="355" font-size="15" fill="#6e7972">rule</text>
+    <text x="755" y="385" font-size="17" fill="#18201c">require-team-label</text>
+    <text x="755" y="425" font-size="15" fill="#6e7972">예외·수정 계획 뒤 Enforce 검토</text>
+  </g>
+</svg>

@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">운영 관리 프레임워크의 질문 지도</title><desc id="desc">ITIL, ISO 9001, ISO IEC 20000, CMMI가 답하는 질문을 매트릭스로 정리한다.</desc><rect width="1200" height="560" fill="#fbfcfa"/><g font-family="Arial, Pretendard, sans-serif"><text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">프레임워크 이름보다, 답하는 질문이 다릅니다</text><text x="70" y="105" font-size="17" fill="#6e7972">같은 운영 관리라도 서비스·품질·개선의 관점은 서로 다릅니다.</text><line x1="290" y1="165" x2="290" y2="465" stroke="#c5decf"/><line x1="70" y1="265" x2="1130" y2="265" stroke="#c5decf"/><line x1="70" y1="365" x2="1130" y2="365" stroke="#c5decf"/><text x="95" y="225" font-size="17" fill="#6e7972">운영 질문</text><text x="95" y="325" font-size="17" fill="#6e7972">관리 기준</text><text x="95" y="425" font-size="17" fill="#6e7972">개선 질문</text><g font-size="19" font-weight="700" fill="#18201c"><text x="340" y="195">ITIL</text><text x="540" y="195">ISO 9001</text><text x="760" y="195">ISO/IEC 20000</text><text x="1020" y="195">CMMI</text></g><g font-size="16" fill="#51705f"><text x="340" y="235">서비스를 어떻게 운영할까?</text><text x="540" y="235">품질이 일관되게 작동할까?</text><text x="760" y="235">IT 서비스 관리 체계가 있는가?</text><text x="1020" y="235">프로세스 역량은 어떤가?</text><text x="340" y="335">실무 관행</text><text x="540" y="335">품질경영 시스템</text><text x="760" y="335">서비스 관리 시스템</text><text x="1020" y="335">성숙도 모델</text><text x="340" y="435">지속적 개선</text><text x="540" y="435">시정 조치</text><text x="760" y="435">서비스 개선</text><text x="1020" y="435">단계적 개선</text></g><text x="70" y="525" font-size="15" fill="#6e7972">ISO/IEC 20000-11의 ITIL 관계 설명과 CMMI 공개 자료를 바탕으로 재구성</text></g></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">운영 관리 프레임워크의 질문 지도</title>
+  <desc id="desc">ITIL, ISO 9001, ISO IEC 20000, CMMI가 답하는 질문을 매트릭스로 정리한다.</desc>
+  <rect width="1200" height="560" fill="#fbfcfa" />
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">프레임워크 이름보다, 답하는 질문이 다릅니다</text>
+    <text x="70" y="105" font-size="17" fill="#6e7972">같은 운영 관리라도 서비스·품질·개선의 관점은 서로 다릅니다.</text>
+    <line x1="290" y1="165" x2="290" y2="465" stroke="#c5decf" />
+    <line x1="70" y1="265" x2="1130" y2="265" stroke="#c5decf" />
+    <line x1="70" y1="365" x2="1130" y2="365" stroke="#c5decf" />
+    <text x="95" y="225" font-size="17" fill="#6e7972">운영 질문</text>
+    <text x="95" y="325" font-size="17" fill="#6e7972">관리 기준</text>
+    <text x="95" y="425" font-size="17" fill="#6e7972">개선 질문</text>
+    <g font-size="19" font-weight="700" fill="#18201c">
+      <text x="340" y="195">ITIL</text>
+      <text x="540" y="195">ISO 9001</text>
+      <text x="760" y="195">ISO/IEC 20000</text>
+      <text x="1020" y="195">CMMI</text>
+    </g>
+    <g font-size="16" fill="#51705f">
+      <text x="340" y="235">서비스를 어떻게 운영할까?</text>
+      <text x="540" y="235">품질이 일관되게 작동할까?</text>
+      <text x="760" y="235">IT 서비스 관리 체계가 있는가?</text>
+      <text x="1020" y="235">프로세스 역량은 어떤가?</text>
+      <text x="340" y="335">실무 관행</text>
+      <text x="540" y="335">품질경영 시스템</text>
+      <text x="760" y="335">서비스 관리 시스템</text>
+      <text x="1020" y="335">성숙도 모델</text>
+      <text x="340" y="435">지속적 개선</text>
+      <text x="540" y="435">시정 조치</text>
+      <text x="760" y="435">서비스 개선</text>
+      <text x="1020" y="435">단계적 개선</text>
+    </g>
+  </g>
+</svg>

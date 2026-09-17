@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">pgvector 유사도 검색의 개념</title><desc id="desc">질의 벡터에 가까운 문서 벡터를 찾는 산점도</desc><rect width="1200" height="560" fill="#fbfcfa"/><g font-family="Arial, Pretendard, sans-serif"><text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">가까운 의미를 어떻게 찾을까</text><text x="70" y="105" font-size="17" fill="#6e7972">pgvector는 문서와 질의를 숫자 벡터로 저장하고, 거리로 가까운 결과를 찾습니다.</text><rect x="70" y="150" width="700" height="330" rx="18" fill="#f0f6f1"/><line x1="130" y1="430" x2="710" y2="430" stroke="#bac9bd"/><line x1="130" y1="430" x2="130" y2="195" stroke="#bac9bd"/><g fill="#86b99e"><circle cx="245" cy="350" r="13"/><circle cx="335" cy="250" r="13"/><circle cx="420" cy="324" r="13"/><circle cx="510" cy="230" r="13"/><circle cx="590" cy="345" r="13"/><circle cx="650" cy="275" r="13"/><circle cx="300" cy="390" r="13"/></g><g fill="#65ae91"><circle cx="445" cy="268" r="15"/><circle cx="485" cy="292" r="15"/><circle cx="430" cy="308" r="15"/></g><circle cx="465" cy="300" r="22" fill="#18201c"/><text x="455" y="306" font-size="13" fill="#fff">Q</text><circle cx="465" cy="300" r="115" fill="none" stroke="#65ae91" stroke-width="3" stroke-dasharray="8 8"/><text x="150" y="220" font-size="14" fill="#6e7972">벡터 공간을 2차원으로 단순화한 예시</text><rect x="825" y="165" width="305" height="130" rx="14" fill="#18201c"/><text x="855" y="210" font-size="18" font-weight="700" fill="#fff">1. 질의 임베딩</text><text x="855" y="246" font-size="15" fill="#b8d7c3">“비용을 줄이는 방법” → Q</text><rect x="825" y="315" width="305" height="130" rx="14" fill="#e0f1e8"/><text x="855" y="360" font-size="18" font-weight="700" fill="#18201c">2. 가까운 결과 반환</text><text x="855" y="396" font-size="15" fill="#51705f">점선 원 안의 벡터가 후보가 됩니다.</text><text x="70" y="525" font-size="15" fill="#6e7972">pgvector 공식 문서의 거리 기반 검색 개념을 바탕으로 재구성</text></g></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">pgvector 유사도 검색의 개념</title>
+  <desc id="desc">질의 벡터에 가까운 문서 벡터를 찾는 산점도</desc>
+  <rect width="1200" height="560" fill="#fbfcfa" />
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">가까운 의미를 어떻게 찾을까</text>
+    <text x="70" y="105" font-size="17" fill="#6e7972">pgvector는 문서와 질의를 숫자 벡터로 저장하고, 거리로 가까운 결과를 찾습니다.</text>
+    <rect x="70" y="150" width="700" height="330" rx="18" fill="#f0f6f1" />
+    <line x1="130" y1="430" x2="710" y2="430" stroke="#bac9bd" />
+    <line x1="130" y1="430" x2="130" y2="195" stroke="#bac9bd" />
+    <g fill="#86b99e">
+      <circle cx="245" cy="350" r="13" />
+      <circle cx="335" cy="250" r="13" />
+      <circle cx="420" cy="324" r="13" />
+      <circle cx="510" cy="230" r="13" />
+      <circle cx="590" cy="345" r="13" />
+      <circle cx="650" cy="275" r="13" />
+      <circle cx="300" cy="390" r="13" />
+    </g>
+    <g fill="#65ae91">
+      <circle cx="445" cy="268" r="15" />
+      <circle cx="485" cy="292" r="15" />
+      <circle cx="430" cy="308" r="15" />
+    </g>
+    <circle cx="465" cy="300" r="22" fill="#18201c" />
+    <text x="455" y="306" font-size="13" fill="#fff">Q</text>
+    <circle cx="465" cy="300" r="115" fill="none" stroke="#65ae91" stroke-width="3" stroke-dasharray="8 8" />
+    <text x="150" y="220" font-size="14" fill="#6e7972">벡터 공간을 2차원으로 단순화한 예시</text>
+    <rect x="825" y="165" width="305" height="130" rx="14" fill="#18201c" />
+    <text x="855" y="210" font-size="18" font-weight="700" fill="#fff">1. 질의 임베딩</text>
+    <text x="855" y="246" font-size="15" fill="#b8d7c3">“비용을 줄이는 방법” → Q</text>
+    <rect x="825" y="315" width="305" height="130" rx="14" fill="#e0f1e8" />
+    <text x="855" y="360" font-size="18" font-weight="700" fill="#18201c">2. 가까운 결과 반환</text>
+    <text x="855" y="396" font-size="15" fill="#51705f">점선 원 안의 벡터가 후보가 됩니다.</text>
+  </g>
+</svg>

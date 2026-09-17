@@ -1,1 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">OpenTelemetry Collector 파이프라인</title><desc id="desc">여러 Receiver가 데이터를 Processor를 거쳐 여러 Exporter로 전달하는 구조</desc><rect width="1200" height="560" fill="#fbfcfa"/><g font-family="Arial, Pretendard, sans-serif"><text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">한 번 받고, 필요한 만큼 가공해 여러 곳으로 보냅니다</text><text x="70" y="105" font-size="17" fill="#6e7972">Collector는 Receiver·Processor·Exporter를 조합하는 파이프라인입니다.</text><g fill="#e0f1e8" stroke="#65ae91" stroke-width="2"><circle cx="185" cy="225" r="56"/><circle cx="185" cy="365" r="56"/><circle cx="570" cy="295" r="80"/><circle cx="965" cy="205" r="56"/><circle cx="965" cy="385" r="56"/></g><g font-size="18" font-weight="700" fill="#18201c"><text x="140" y="231">OTLP</text><text x="125" y="371">Prometheus</text><text x="526" y="302">Processor</text><text x="929" y="211">Trace</text><text x="922" y="391">Metric</text></g><g font-size="14" fill="#51705f"><text x="138" y="255">Receiver</text><text x="130" y="395">Receiver</text><text x="525" y="330">filter · batch</text><text x="535" y="351">attributes</text><text x="927" y="235">Exporter</text><text x="922" y="415">Exporter</text></g><path d="M245 225C360 225 400 265 490 285M245 365C360 365 400 325 490 305M650 275C740 240 790 220 905 210M650 315C740 350 800 372 905 380" fill="none" stroke="#65ae91" stroke-width="5"/><text x="70" y="525" font-size="15" fill="#6e7972">OpenTelemetry Collector Architecture의 공식 파이프라인을 바탕으로 재구성 (CC BY 4.0)</text></g></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">OpenTelemetry Collector 파이프라인</title>
+  <desc id="desc">여러 Receiver가 데이터를 Processor를 거쳐 여러 Exporter로 전달하는 구조</desc>
+  <rect width="1200" height="560" fill="#fbfcfa" />
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">한 번 받고, 필요한 만큼 가공해 여러 곳으로 보냅니다</text>
+    <text x="70" y="105" font-size="17" fill="#6e7972">Collector는 Receiver·Processor·Exporter를 조합하는 파이프라인입니다.</text>
+    <g fill="#e0f1e8" stroke="#65ae91" stroke-width="2">
+      <circle cx="185" cy="225" r="56" />
+      <circle cx="185" cy="365" r="56" />
+      <circle cx="570" cy="295" r="80" />
+      <circle cx="965" cy="205" r="56" />
+      <circle cx="965" cy="385" r="56" />
+    </g>
+    <g font-size="18" font-weight="700" fill="#18201c">
+      <text x="140" y="231">OTLP</text>
+      <text x="125" y="371">Prometheus</text>
+      <text x="526" y="302">Processor</text>
+      <text x="929" y="211">Trace</text>
+      <text x="922" y="391">Metric</text>
+    </g>
+    <g font-size="14" fill="#51705f">
+      <text x="138" y="255">Receiver</text>
+      <text x="130" y="395">Receiver</text>
+      <text x="525" y="330">filter · batch</text>
+      <text x="535" y="351">attributes</text>
+      <text x="927" y="235">Exporter</text>
+      <text x="922" y="415">Exporter</text>
+    </g>
+    <path d="M245 225C360 225 400 265 490 285M245 365C360 365 400 325 490 305M650 275C740 240 790 220 905 210M650 315C740 350 800 372 905 380" fill="none" stroke="#65ae91" stroke-width="5" />
+  </g>
+</svg>

@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">OpenTofu plan 변경 검토 예시</title><desc id="desc">코드 변경 뒤 plan으로 추가와 변경 내용을 검토하는 터미널 화면</desc><rect width="1200" height="560" fill="#fbfcfa"/><g font-family="Arial, Pretendard, sans-serif"><text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">변경은 apply 전에 읽을 수 있어야 합니다</text><text x="70" y="105" font-size="17" fill="#6e7972">OpenTofu의 핵심 흐름은 코드 작성 → plan 검토 → 승인 후 apply입니다.</text><rect x="70" y="150" width="1060" height="315" rx="16" fill="#18201c"/><circle cx="105" cy="185" r="7" fill="#ef7f7f"/><circle cx="130" cy="185" r="7" fill="#eebd62"/><circle cx="155" cy="185" r="7" fill="#77bf9d"/><g font-family="Consolas, monospace" font-size="18"><text x="105" y="235" fill="#b8d7c3">$ tofu plan</text><text x="105" y="285" fill="#fff"># aws_instance.web will be created</text><text x="125" y="320" fill="#72c295">+ instance_type = "t3.medium"</text><text x="125" y="352" fill="#72c295">+ tags = { environment = "staging" }</text><text x="105" y="405" fill="#fff">Plan: 1 to add, 0 to change, 0 to destroy.</text></g><rect x="850" y="255" width="215" height="125" rx="12" fill="#e0f1e8"/><text x="880" y="300" font-size="18" font-weight="700" fill="#18201c">리뷰 질문</text><text x="880" y="335" font-size="15" fill="#51705f">추가 비용은?</text><text x="880" y="362" font-size="15" fill="#51705f">영향 범위는?</text><text x="70" y="525" font-size="15" fill="#6e7972">OpenTofu Core Workflow와 plan 문서의 예시를 바탕으로 재구성</text></g></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">OpenTofu plan 변경 검토 예시</title>
+  <desc id="desc">코드 변경 뒤 plan으로 추가와 변경 내용을 검토하는 터미널 화면</desc>
+  <rect width="1200" height="560" fill="#fbfcfa" />
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="70" font-size="30" font-weight="700" fill="#18201c">변경은 apply 전에 읽을 수 있어야 합니다</text>
+    <text x="70" y="105" font-size="17" fill="#6e7972">OpenTofu의 핵심 흐름은 코드 작성 → plan 검토 → 승인 후 apply입니다.</text>
+    <rect x="70" y="150" width="1060" height="315" rx="16" fill="#18201c" />
+    <circle cx="105" cy="185" r="7" fill="#ef7f7f" />
+    <circle cx="130" cy="185" r="7" fill="#eebd62" />
+    <circle cx="155" cy="185" r="7" fill="#77bf9d" />
+    <g font-family="Consolas, monospace" font-size="18">
+      <text x="105" y="235" fill="#b8d7c3">$ tofu plan</text>
+      <text x="105" y="285" fill="#fff"># aws_instance.web will be created</text>
+      <text x="125" y="320" fill="#72c295">+ instance_type = "t3.medium"</text>
+      <text x="125" y="352" fill="#72c295">+ tags = { environment = "staging" }</text>
+      <text x="105" y="405" fill="#fff">Plan: 1 to add, 0 to change, 0 to destroy.</text>
+    </g>
+  </g>
+</svg>
