@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">개인 로컬 AI 구성 요소</title>
+  <desc id="desc">개인 PC 또는 워크스테이션 안에서 사용자 인터페이스, 로컬 실행기, 모델과 문서가 연결되고 외부 연결은 선택적으로 분리되는 구조</desc>
+  <rect width="1200" height="560" fill="#fbfcfa"/>
+  <g font-family="Arial, Pretendard, sans-serif">
+    <text x="70" y="68" font-size="30" font-weight="700" fill="#18201c">개인 AI의 핵심은 모델보다 ‘어디에서 무엇이 흐르는가’입니다</text>
+    <text x="70" y="104" font-size="17" fill="#6e7972">로컬 실행·문서·도구 연결을 한 경계 안에서 분리해 봅니다.</text>
+
+    <rect x="70" y="148" width="790" height="334" rx="26" fill="#f0f6f1" stroke="#b8d7c3" stroke-width="2"/>
+    <text x="105" y="190" font-size="16" font-weight="700" fill="#51705f">내 PC 또는 워크스테이션</text>
+
+    <rect x="108" y="220" width="220" height="94" rx="16" fill="#ffffff" stroke="#c5decf" stroke-width="2"/>
+    <text x="138" y="258" font-size="18" font-weight="700" fill="#18201c">사용자 인터페이스</text>
+    <text x="138" y="287" font-size="14" fill="#6e7972">LM Studio · Open WebUI</text>
+
+    <path d="M350 267h105m-18-14 18 14-18 14" fill="none" stroke="#65ae91" stroke-width="4"/>
+
+    <rect x="475" y="204" width="290" height="125" rx="18" fill="#18201c"/>
+    <text x="507" y="250" font-size="20" font-weight="700" fill="#ffffff">로컬 실행기</text>
+    <text x="507" y="280" font-size="15" fill="#b8d7c3">Ollama 또는 LM Studio</text>
+    <text x="507" y="305" font-size="14" fill="#b8d7c3">추론 · 로컬 API · 모델 관리</text>
+
+    <path d="M620 348v42" fill="none" stroke="#65ae91" stroke-width="4"/>
+    <path d="M606 376l14 14 14-14" fill="none" stroke="#65ae91" stroke-width="4"/>
+
+    <rect x="475" y="406" width="135" height="52" rx="12" fill="#dcefe2"/>
+    <text x="500" y="438" font-size="16" font-weight="700" fill="#18201c">모델 파일</text>
+    <rect x="630" y="406" width="135" height="52" rx="12" fill="#ffffff" stroke="#c5decf" stroke-width="2"/>
+    <text x="655" y="438" font-size="16" font-weight="700" fill="#18201c">내 문서</text>
+
+    <rect x="905" y="148" width="225" height="154" rx="22" fill="#ffffff" stroke="#c5decf" stroke-width="2" stroke-dasharray="7 7"/>
+    <text x="937" y="194" font-size="17" font-weight="700" fill="#18201c">선택적 외부 연결</text>
+    <text x="937" y="226" font-size="14" fill="#6e7972">모델 다운로드</text>
+    <text x="937" y="252" font-size="14" fill="#6e7972">상용 API · 웹 검색</text>
+    <text x="937" y="278" font-size="14" fill="#6e7972">원격 도구 호출</text>
+
+    <path d="M860 258h30m-15-14 15 14-15 14" fill="none" stroke="#9aa89e" stroke-width="3" stroke-dasharray="6 6"/>
+
+    <rect x="905" y="340" width="225" height="142" rx="22" fill="#e0f1e8"/>
+    <text x="937" y="384" font-size="17" font-weight="700" fill="#18201c">운영 기준</text>
+    <text x="937" y="416" font-size="14" fill="#51705f">문서 범위 · 권한</text>
+    <text x="937" y="442" font-size="14" fill="#51705f">로그 · 백업 · 업데이트</text>
+  </g>
+</svg>
