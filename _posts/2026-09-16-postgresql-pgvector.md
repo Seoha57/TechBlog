@@ -157,7 +157,7 @@ PostgreSQL에 pgvector를 붙이는 방식은 기존 관계형 데이터와 벡�
 
 DBA 관점에서 pgvector는 단순한 AI 기능이 아니라 새로운 데이터 타입과 인덱스, 저장 공간, 유지보수 주기를 PostgreSQL 운영 안에 포함하는 일입니다. 따라서 “어떤 벡터 DB가 더 빠른가?”보다 “우리 데이터의 관계형 조건과 검색 품질을 어떤 경계에서 관리할 것인가?”를 먼저 질문하는 편이 더 현실적인 출발점입니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [pgvector 공식 저장소와 README](https://github.com/pgvector/pgvector)
 - [pgvector 공식 변경 이력](https://github.com/pgvector/pgvector/blob/master/CHANGELOG.md)

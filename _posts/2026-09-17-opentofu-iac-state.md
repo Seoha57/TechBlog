@@ -105,7 +105,7 @@ OpenTofu는 ITGC 자체가 아니라 인프라 변경 통제를 구현하는 한
 
 OpenTofu를 배운다는 것은 `.tf` 문법만 외우는 일이 아닙니다. 코드·계획·state·실제 인프라의 관계와, 팀이 동시에 변경할 때 필요한 권한·잠금·검토 흐름을 이해하는 일입니다. 취준생이라면 작은 dev 환경에서 plan 결과를 읽고, state가 무엇을 기록하는지 확인하는 것부터 시작하면 좋습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [OpenTofu 시작하기](https://opentofu.org/docs/v1.7/intro/)
 - [OpenTofu State Storage and Locking](https://opentofu.org/docs/language/state/backends/)

@@ -228,7 +228,7 @@ NetworkPolicy의 핵심은 “클러스터 안이니 다 통신해도 된다”�
 
 처음에는 API Pod 하나의 ingress를 보호하는 작은 정책부터 시작해 보세요. 어떤 Pod가 호출해야 하는지, 어떤 포트가 필요한지, 실패하면 서비스가 어떻게 보이는지를 문서와 테스트로 남깁니다. 그 작은 정책이 쌓이면 네트워크 보안은 추상적인 원칙이 아니라 실제 업무 흐름을 반영한 운영 기준이 될 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Kubernetes, Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 - [Kubernetes NetworkPolicy API Reference](https://kubernetes.io/docs/reference/kubernetes-api/networking/network-policy-v1/)

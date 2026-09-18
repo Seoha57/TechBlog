@@ -105,7 +105,7 @@ Playwright MCP는 QA 업무의 시작점을 바꿀 가능성이 있습니다. �
 
 이 글의 결론은 간단합니다. MCP로 빠르게 탐색하고, Playwright 코드로 반복 가능하게 만들고, QA 리뷰로 의미를 확인합니다. 세 단계를 분리하면 새로운 기술을 검토하면서도 기존 테스트 품질 기준을 유지할 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Playwright MCP 공식 문서](https://playwright.dev/docs/getting-started-mcp)
 - [Playwright 공식 문서](https://playwright.dev/docs/intro)

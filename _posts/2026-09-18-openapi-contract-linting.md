@@ -284,7 +284,7 @@ OpenAPI의 가장 큰 가치는 문서 한 장을 만드는 데 있지 않습니
 
 처음에는 핵심 API 하나만 골라 성공·대표 오류·인증 요구사항을 명확히 적어도 충분합니다. 그 명세에 작은 린트 규칙 하나와 응답 스키마 테스트 하나를 연결하면, API 검증은 “200이 왔는가”에서 “소비자가 의존하는 약속을 지켰는가”로 한 단계 넓어집니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [OpenAPI Learn](https://learn.openapis.org/)

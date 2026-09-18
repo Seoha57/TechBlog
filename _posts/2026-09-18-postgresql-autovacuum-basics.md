@@ -200,7 +200,7 @@ PostgreSQL의 autovacuum은 보이지 않는 백그라운드 작업처럼 보이
 
 처음에는 `pg_stat_user_tables`에서 변경이 많은 테이블과 마지막 autovacuum·autoanalyze 시각을 보는 것부터 시작해도 좋습니다. 그 뒤 긴 트랜잭션, 쿼리 계획, I/O, 배치 패턴을 함께 연결하면 “느린 DB”라는 현상을 보다 구체적인 점검 항목으로 바꿀 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [PostgreSQL, Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html)
 - [PostgreSQL, VACUUM](https://www.postgresql.org/docs/current/sql-vacuum.html)

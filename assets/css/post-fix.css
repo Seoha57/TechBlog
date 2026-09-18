@@ -4,3 +4,5 @@
 .post-body{max-width:760px;margin:58px auto 0}
 @media(max-width:700px){.post-content{padding:64px 20px 24px}.post-header{padding:18px 0 38px}.post-content h1{font-size:clamp(38px,11vw,54px);line-height:1.18}.post-body{margin-top:40px}}
 .all-articles-link{display:block;width:max-content;margin:42px auto 0;color:var(--ink);font-weight:750;text-decoration:none}.all-articles-link span{margin-left:12px;color:var(--accent);font-size:20px}.articles-page h1{margin:12px 0 0;font-size:clamp(42px,6vw,72px);letter-spacing:-.08em}.articles-page .section-heading{align-items:end}
+
+.post-body .references-heading{margin-top:88px;font-size:22px;letter-spacing:-.05em}@media(max-width:700px){.post-body .references-heading{margin-top:64px;font-size:20px}}

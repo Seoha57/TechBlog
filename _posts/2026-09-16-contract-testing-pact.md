@@ -136,7 +136,7 @@ Contract Testing은 API 전체를 한 번에 검증하는 방법이라기보다,
 
 결국 중요한 것은 도구의 이름보다 테스트의 질문입니다. “서비스 전체가 완벽히 동작하는가?”와 “이 소비자가 기대하는 약속을 제공자가 지키는가?”는 서로 다른 질문입니다. 두 질문을 분리하면 QA는 빠른 계약 검증과 넓은 통합 검증을 각각 적절한 위치에 둘 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Pact 공식 문서](https://docs.pact.io/)
 - [Pact가 동작하는 방식](https://docs.pact.io/getting_started/how_pact_works)

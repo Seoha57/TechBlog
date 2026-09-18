@@ -204,7 +204,7 @@ RAG는 Retrieval-Augmented Generation의 약자입니다. 일반적인 흐름은
 
 처음에는 로컬 모델 하나와 공개 문서 몇 개로 충분합니다. 답변의 근거를 확인하고, 저장 위치를 확인하고, 같은 질문을 반복해 보며 한계를 기록해 보세요. 이 기록은 이후 구성 변경의 기준이 됩니다. 그 다음 단계에서 로컬 API를 연결하거나, 상용 AI·MCP 도구를 붙일 때도 어떤 기능을 추가하고 어떤 데이터 경계를 넓히는지 더 명확하게 판단할 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Ollama Quickstart](https://docs.ollama.com/quickstart)
 - [Ollama API Introduction](https://docs.ollama.com/api/introduction)

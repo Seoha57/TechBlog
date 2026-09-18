@@ -162,7 +162,7 @@ function authorizeToolCall({ user, tool, args, approved }) {
 
 처음에는 가장 영향이 작은 읽기 전용 도구 하나를 선택해 보세요. 누가 어떤 데이터까지 읽는지, 결과에 무엇을 숨길지, 호출 기록을 어떻게 남길지를 먼저 명확하게 합니다. 이후 쓰기 도구를 추가할 때는 승인과 재검증을 붙이고, 삭제·권한 변경처럼 되돌리기 어려운 작업은 별도 절차가 마련될 때까지 에이전트에서 제외하는 편이 좋습니다. 안전한 에이전트는 도구를 많이 가진 에이전트가 아니라, 필요한 일만 정해진 경계 안에서 수행하는 에이전트입니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Model Context Protocol, Authorization Specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization)
 - [Model Context Protocol, Tools Specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)

@@ -177,7 +177,7 @@ AI 에이전트의 품질을 하나의 점수로 표현하기는 어렵습니다
 
 처음에는 실제 서비스에서 영향이 큰 요청 하나를 골라 보세요. 그 요청에 필요한 사실, 허용 도구, 금지 도구, 실패 시 안내 방식을 짧은 데이터셋으로 기록합니다. 그다음 프롬프트나 모델 설정을 바꿀 때마다 같은 사례를 다시 평가하면 “바뀐 뒤 더 좋아졌는가?”를 추측이 아니라 비교로 이야기할 수 있습니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [OpenAI, Working with evals](https://developers.openai.com/api/docs/guides/evals)
 - [LangSmith, Application-specific evaluation approaches](https://docs.langchain.com/langsmith/evaluation-approaches)

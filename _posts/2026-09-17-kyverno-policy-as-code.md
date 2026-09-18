@@ -108,7 +108,7 @@ Kyverno는 최근 CEL 기반 정책 유형으로 발전하고 있습니다. 공�
 
 Kyverno는 Kubernetes 배포 기준을 사람의 기억에서 정책 코드로 옮기는 도구입니다. 취준생 관점에서는 Admission Control, 정책 검증, Audit과 Enforce의 차이부터 이해하면 충분한 출발점이 됩니다. 운영 관점에서는 작은 기준부터 자동화하고, 결과를 변경관리와 개선 활동에 연결하는 것이 핵심입니다.
 
-### 참고 자료
+<h3 class="references-heading">참고 자료</h3>
 
 - [Kyverno 공식 소개](https://kyverno.io/docs/introduction/)
 - [Kyverno 정책 유형 개요](https://kyverno.io/docs/policy-types/overview/)
