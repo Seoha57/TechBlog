@@ -5,6 +5,7 @@ baseurl: "/TechBlog"
 theme: minima
 lang: ko-KR
 timezone: Asia/Seoul
+future: true
 permalink: /:categories/:title/
 
 author:
