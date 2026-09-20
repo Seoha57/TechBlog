@@ -4,6 +4,7 @@ url: "https://seoha57.github.io"
 baseurl: "/TechBlog"
 theme: minima
 lang: ko-KR
+timezone: Asia/Seoul
 permalink: /:categories/:title/
 
 author:
