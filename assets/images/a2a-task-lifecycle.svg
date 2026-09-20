@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 470" role="img" aria-labelledby="title desc">
+  <title id="title">A2A Agent Card 발견부터 Task 완료까지</title>
+  <desc id="desc">클라이언트가 Agent Card를 발견하고 인증한 뒤 메시지를 보내 Task 상태와 Artifact를 받는 흐름</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#347d70"/></marker></defs>
+  <rect width="1100" height="470" rx="24" fill="#f6fbfa"/>
+  <text x="50" y="55" font-family="sans-serif" font-size="27" font-weight="700" fill="#173d36">A2A 협업의 최소 작업 흐름</text>
+  <text x="50" y="86" font-family="sans-serif" font-size="15" fill="#54736d">발견·인증·작업·결과를 분리하면 운영 경계가 보인다</text>
+  <g font-family="sans-serif">
+    <rect x="55" y="145" width="180" height="115" rx="18" fill="#d9f2ec" stroke="#72b9a9" stroke-width="2"/><text x="145" y="180" text-anchor="middle" font-size="18" font-weight="700" fill="#24594e">클라이언트</text><text x="145" y="210" text-anchor="middle" font-size="14" fill="#3f6f66">요청·재시도·상태</text><text x="145" y="233" text-anchor="middle" font-size="14" fill="#3f6f66">결과 검증</text>
+    <rect x="300" y="125" width="190" height="155" rx="18" fill="#fff" stroke="#72b9a9" stroke-width="2"/><text x="395" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#24594e">Agent Card</text><text x="395" y="194" text-anchor="middle" font-size="14" fill="#3f6f66">능력·스킬·버전</text><text x="395" y="218" text-anchor="middle" font-size="14" fill="#3f6f66">바인딩·인증</text><text x="395" y="242" text-anchor="middle" font-size="14" fill="#3f6f66">입출력 모드</text>
+    <rect x="555" y="125" width="190" height="155" rx="18" fill="#fff" stroke="#72b9a9" stroke-width="2"/><text x="650" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#24594e">원격 에이전트</text><text x="650" y="194" text-anchor="middle" font-size="14" fill="#3f6f66">Message → Task</text><text x="650" y="218" text-anchor="middle" font-size="14" fill="#3f6f66">working / input</text><text x="650" y="242" text-anchor="middle" font-size="14" fill="#3f6f66">required / done</text>
+    <rect x="810" y="145" width="235" height="115" rx="18" fill="#d9f2ec" stroke="#72b9a9" stroke-width="2"/><text x="927" y="180" text-anchor="middle" font-size="18" font-weight="700" fill="#24594e">Artifact</text><text x="927" y="210" text-anchor="middle" font-size="14" fill="#3f6f66">텍스트·파일·JSON</text><text x="927" y="233" text-anchor="middle" font-size="14" fill="#3f6f66">검증·권한·보관</text>
+    <path d="M235 202H292" stroke="#347d70" stroke-width="3" marker-end="url(#arrow)"/><text x="263" y="187" text-anchor="middle" font-size="12" fill="#54736d">발견</text>
+    <path d="M490 202H547" stroke="#347d70" stroke-width="3" marker-end="url(#arrow)"/><text x="518" y="187" text-anchor="middle" font-size="12" fill="#54736d">인증</text>
+    <path d="M745 202H802" stroke="#347d70" stroke-width="3" marker-end="url(#arrow)"/><text x="774" y="187" text-anchor="middle" font-size="12" fill="#54736d">결과</text>
+    <path d="M650 292 C650 350 145 350 145 270" fill="none" stroke="#f0a35b" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/><text x="405" y="337" text-anchor="middle" font-size="14" fill="#9b6a37">폴링·스트리밍·푸시로 상태 관찰</text>
+  </g>
+  <text x="550" y="425" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#285c52">Task 완료는 결과가 업무적으로 옳다는 뜻이 아니므로 별도 검증이 필요하다</text>
+</svg>
