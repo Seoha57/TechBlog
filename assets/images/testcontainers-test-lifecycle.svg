@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 490" role="img" aria-labelledby="title desc">
+  <title id="title">Testcontainers 통합 테스트의 수명 주기</title><desc id="desc">테스트 실행이 Docker에 컨테이너 생성을 요청하고, 준비 상태 확인, 애플리케이션 설정 주입, 테스트 데이터 정리, 컨테이너 종료까지 이어지는 흐름</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#3a8274"/></marker></defs>
+  <rect width="1100" height="490" rx="28" fill="#f6fbf9"/>
+  <text x="54" y="60" font-family="sans-serif" font-size="28" font-weight="700" fill="#173d36">통합 테스트에서 컨테이너가 맡는 경계</text>
+  <text x="54" y="90" font-family="sans-serif" font-size="16" fill="#59766f">서비스 준비와 테스트 데이터의 시작·끝을 테스트 수명 주기에 묶는다</text>
+  <g font-family="sans-serif">
+    <rect x="55" y="150" width="202" height="148" rx="20" fill="#fff" stroke="#7fbcaf" stroke-width="2"/><text x="78" y="188" font-size="17" font-weight="700" fill="#204f46">1. 테스트 코드</text><text x="78" y="222" font-size="14" fill="#4d6e67">필요한 이미지·버전 선언</text><text x="78" y="246" font-size="14" fill="#4d6e67">고정 포트 대신 연결 정보 수신</text><text x="78" y="270" font-size="14" fill="#4d6e67">정상·실패 경로 모두 정리</text>
+    <rect x="338" y="125" width="215" height="198" rx="20" fill="#dff1eb" stroke="#6ab29f" stroke-width="2"/><text x="362" y="164" font-size="17" font-weight="700" fill="#204f46">2. Docker 컨테이너</text><text x="362" y="199" font-size="14" fill="#3f6f65">postgres:16.4-alpine</text><line x1="362" y1="214" x2="528" y2="214" stroke="#8ec5b8"/><text x="362" y="245" font-size="14" fill="#3f6f65">포트·네트워크 격리</text><text x="362" y="270" font-size="14" fill="#3f6f65">health check / 로그 대기</text><text x="362" y="295" font-size="14" fill="#3f6f65">테스트 뒤 삭제</text>
+    <rect x="635" y="150" width="206" height="148" rx="20" fill="#fff" stroke="#7fbcaf" stroke-width="2"/><text x="658" y="188" font-size="17" font-weight="700" fill="#204f46">3. 애플리케이션</text><text x="658" y="222" font-size="14" fill="#4d6e67">DATABASE_URL 주입</text><text x="658" y="246" font-size="14" fill="#4d6e67">운영과 같은 migration 실행</text><text x="658" y="270" font-size="14" fill="#4d6e67">API·repository 동작 검증</text>
+    <rect x="922" y="150" width="124" height="148" rx="20" fill="#fff8ec" stroke="#e7b26a" stroke-width="2"/><text x="984" y="188" text-anchor="middle" font-size="17" font-weight="700" fill="#825922">4. 결과</text><text x="984" y="222" text-anchor="middle" font-size="14" fill="#775d3b">통과/실패</text><text x="984" y="246" text-anchor="middle" font-size="14" fill="#775d3b">로그 보존</text><text x="984" y="270" text-anchor="middle" font-size="14" fill="#775d3b">상태 정리</text>
+    <path d="M257 224H330M553 224H627M841 224H914" fill="none" stroke="#3a8274" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="448" y="380" text-anchor="middle" font-size="16" font-weight="700" fill="#205348">핵심: 포트가 열림이 아니라 서비스가 준비됐음을 확인한 뒤 테스트한다</text>
+    <text x="550" y="414" text-anchor="middle" font-size="14" fill="#59766f">실제 의존성 검증과 외부 SaaS 호출은 같은 문제가 아니므로 mock·sandbox와 역할을 분리한다</text>
+  </g>
+</svg>
