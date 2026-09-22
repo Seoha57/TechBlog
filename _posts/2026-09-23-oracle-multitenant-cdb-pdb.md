@@ -170,6 +170,10 @@ PDB는 `MOUNTED`, `OPEN READ ONLY`, `OPEN READ WRITE`처럼 상태를 가질 수
 
 변경 기록을 남기고 반복 검증하는 과정이 PDB 구조를 오래 안전하게 유지합니다.
 
+작은 변경도 대상 PDB와 공통 CDB 영향 범위를 함께 확인하면 예기치 않은 장애를 줄일 수 있습니다.
+
+이 원칙은 도입 이후의 일상 운영에도 동일하게 적용됩니다.
+
 ## 한계와 적용 기준 Q&A
 
 <section class="quick-answers">
