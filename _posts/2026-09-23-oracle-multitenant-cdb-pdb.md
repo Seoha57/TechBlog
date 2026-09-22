@@ -174,6 +174,8 @@ PDB는 `MOUNTED`, `OPEN READ ONLY`, `OPEN READ WRITE`처럼 상태를 가질 수
 
 이 원칙은 도입 이후의 일상 운영에도 동일하게 적용됩니다.
 
+문서화는 복구 속도를 높입니다.
+
 ## 한계와 적용 기준 Q&A
 
 <section class="quick-answers">
