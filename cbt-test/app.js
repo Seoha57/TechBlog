@@ -38,7 +38,7 @@ function render() {
   $('progress').textContent = `${index + 1} / ${quiz.length}`;
   $('progress-fill').style.width = `${(index / quiz.length) * 100}%`;
   $('category').textContent = item.category; $('number').textContent = `문제 ${index + 1}`;
-  $('question').textContent = item.question; $('explanation').className = 'explanation hidden'; $('next-button').className = 'primary hidden';
+  $('question').textContent = item.question; $('explanation').className = 'explanation hidden'; $('prev-button').className = index ? 'secondary' : 'secondary hidden'; $('next-button').className = 'primary hidden';
   $('choices').innerHTML = item.choices.map((choice, i) => `<button class="choice" data-index="${i}">${choice}</button>`).join('');
 }
 function answer(selected) {
@@ -57,6 +57,7 @@ function finish() {
 $('start-button').onclick = start; $('quit-button').onclick = () => { updateHome(); show('start'); }; $('home-button').onclick = () => { updateHome(); show('start'); }; $('retry-button').onclick = start;
 $('choices').onclick = event => { const button = event.target.closest('.choice'); if (button) answer(Number(button.dataset.index)); };
 $('next-button').onclick = () => index + 1 < quiz.length ? (index++, render()) : finish();
+$('prev-button').onclick = () => { if (index) { index--; render(); } };
 function setupSubjects() {
   const categories = [...new Set(questions.map(item => item.category))];
   $('subjects').innerHTML = categories.map(category => `<label><input type="checkbox" value="${category}" checked><span>${category}<small>${questions.filter(item => item.category === category).length}문제</small></span></label>`).join('');
