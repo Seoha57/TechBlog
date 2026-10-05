@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>김성학 — 기술 역량 & 프로젝트</title><style>
+
+:root {
+  --bg: #080b14;
+  --surface: #0f1623;
+  --surface2: #161f30;
+  --border: #1c2a3e;
+  --accent:  #60efff;
+  --accent2: #a78bfa;
+  --accent3: #4ade80;
+  --accent4: #fb923c;
+  --accent5: #f472b6;
+  --text: #e2e8f0;
+  --text-mid: #94a3b8;
+  --text-dim: #475569;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Noto Sans KR',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 10% 10%, rgba(96,239,255,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 90% 90%, rgba(167,139,250,0.05) 0%, transparent 60%);
+  pointer-events:none; z-index:0;
+}
+
+.wrap { max-width:960px; margin:0 auto; padding:48px 24px; position:relative; z-index:1; }
+
+/* ── 헤더 ── */
+.hero {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:32px; margin-bottom:64px;
+  opacity:0; animation:fadeUp 0.7s ease forwards;
+}
+.hero-left { flex:1; }
+.hero-tag {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; color:var(--accent);
+  letter-spacing:3px; text-transform:uppercase;
+  display:block; margin-bottom:12px;
+}
+.hero h1 {
+  font-size:clamp(36px,5vw,56px);
+  font-weight:900; letter-spacing:-2px;
+  line-height:1; margin-bottom:8px;
+  color:var(--text);
+}
+.hero h1 em { color:var(--text); font-style:normal; }
+.hero-sub { font-size:14px; color:var(--text-mid); line-height:1.8; margin-bottom:16px; }
+.hero-stat {
+  display:flex; gap:20px; flex-wrap:wrap;
+}
+.stat-item {
+  text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 18px;
+}
+.stat-num {
+  font-family:'JetBrains Mono',monospace;
+  font-size:20px; font-weight:700;
+  display:block; margin-bottom:2px;
+}
+.stat-label { font-size:11px; color:var(--text-dim); }
+
+/* ── 섹션 타이틀 ── */
+.sec-title {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; color:var(--accent);
+  letter-spacing:3px; text-transform:uppercase;
+  margin-bottom:28px;
+  display:flex; align-items:center; gap:12px;
+}
+.sec-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--border),transparent); }
+
+/* ── 레이더 + 스킬 ── */
+.radar-section {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:64px;
+}
+@media(max-width:640px){ .radar-section{ grid-template-columns:1fr; } }
+
+.radar-wrap {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  display:flex; flex-direction:column; align-items:center;
+  opacity:0; animation:fadeUp 0.6s ease 0.1s forwards;
+}
+.radar-title {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; color:var(--accent);
+  letter-spacing:2px; text-transform:uppercase;
+  margin-bottom:20px; align-self:flex-start;
+}
+#radarCanvas { max-width:260px; }
+
+.skill-bars {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  opacity:0; animation:fadeUp 0.6s ease 0.2s forwards;
+}
+.skill-bars-title {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; color:var(--accent2);
+  letter-spacing:2px; text-transform:uppercase;
+  margin-bottom:20px;
+}
+.sbar-item { margin-bottom:14px; }
+.sbar-row {
+  display:flex; justify-content:space-between;
+  align-items:center; margin-bottom:5px;
+}
+.sbar-name { font-size:13px; color:var(--text); }
+.sbar-pct {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px; color:var(--text-dim);
+}
+.sbar-track {
+  height:6px; background:var(--border);
+  border-radius:3px; overflow:hidden;
+}
+.sbar-fill {
+  height:100%; border-radius:3px;
+  width:0; transition:width 1.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── 프로젝트 카드 필터 ── */
+.filter-row {
+  display:flex; gap:8px; flex-wrap:wrap;
+  margin-bottom:24px;
+}
+.filter-btn {
+  padding:6px 16px;
+  border-radius:20px;
+  font-size:12px; font-weight:500;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-mid);
+  cursor:pointer;
+  transition:all 0.2s;
+  font-family:'Noto Sans KR',sans-serif;
+}
+.filter-btn:hover { border-color:var(--accent); color:var(--accent); }
+.filter-btn.active {
+  background:var(--accent); color:#000;
+  border-color:var(--accent); font-weight:700;
+}
+
+/* ── 프로젝트 카드 그리드 ── */
+.proj-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;
+  margin-bottom:64px;
+}
+.proj-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  cursor:pointer;
+  transition:all 0.25s;
+  opacity:0;
+  animation:fadeUp 0.5s ease forwards;
+  position:relative; overflow:hidden;
+}
+.proj-card::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(96,239,255,0.03), transparent);
+  opacity:0; transition:opacity 0.25s;
+}
+.proj-card:hover {
+  transform:translateY(-4px);
+  border-color:rgba(96,239,255,0.3);
+  box-shadow:0 12px 40px rgba(0,0,0,0.4);
+}
+.proj-card:hover::after { opacity:1; }
+.proj-card.hidden { display:none; }
+
+.proj-top {
+  display:flex; align-items:flex-start;
+  justify-content:space-between; gap:8px;
+  margin-bottom:12px;
+}
+.proj-icon { font-size:28px; flex-shrink:0; }
+.proj-period {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; color:var(--text-dim);
+  margin-top:4px;
+}
+.proj-title { font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.4; }
+.proj-sub { font-size:12px; color:var(--text-mid); margin-bottom:12px; line-height:1.5; }
+.proj-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:12px; }
+.proj-tag {
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px; padding:2px 7px;
+  border-radius:3px; border:1px solid;
+}
+.proj-result {
+  font-size:12px; color:var(--text-mid);
+  background:var(--surface2);
+  border-radius:6px; padding:8px 10px;
+  border-left:2px solid var(--accent3);
+  line-height:1.5;
+}
+.proj-result.b { border-left-color:var(--accent); }
+.proj-result.p { border-left-color:var(--accent2); }
+.proj-result.o { border-left-color:var(--accent4); }
+
+/* ── 레전드 ── */
+.legend {
+  display:flex; gap:16px; flex-wrap:wrap;
+  margin-bottom:48px;
+}
+.legend-item {
+  display:flex; align-items:center; gap:6px;
+  font-size:12px; color:var(--text-mid);
+}
+.legend-dot {
+  width:8px; height:8px;
+  border-radius:50%;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+body{font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+.hero,.radar-wrap,.skill-bars,.proj-card{opacity:1;animation:none}
+.sbar-fill{width:var(--score);transition:none}.proj-card{cursor:default}.proj-card::after{pointer-events:none}
+.stat-label,.proj-period,.sbar-pct{color:#899ab0}.hero-sub{margin-top:12px}.hero-stat{gap:12px}.stat-item{padding:12px 16px}.stat-num{font-size:20px}.skill-note{font-size:10px;line-height:1.7;color:#8295ad;margin-top:16px}.tech-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px}.tech-tags span{font-size:10px;color:#b5c4d8;border:1px solid var(--border);border-radius:4px;padding:4px 7px}.radar-svg{width:100%;max-width:320px;height:auto}.proj-sub{line-height:1.7}.proj-title{line-height:1.6}.proj-result{line-height:1.7}details{margin-top:14px;border-top:1px solid var(--border);padding-top:10px}summary{font-size:11px;cursor:pointer;color:#94a3b8}details ul{padding-left:16px;font-size:11px;line-height:1.9;color:#b2c1d5;margin-top:10px}details li{margin-bottom:8px}.stamp{font-size:11px;color:#8295ad;margin-top:12px}.count{font-size:11px;color:#94a3b8;margin-bottom:16px}footer{font-size:11px;color:#8295ad;line-height:1.8;padding-top:20px;border-top:1px solid var(--border)}.filter-btn:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.legend{margin-bottom:24px}.proj-grid{align-items:start}
+@media(max-width:480px){.wrap{padding:28px 18px}.hero{margin-bottom:40px}.hero-stat{display:grid;grid-template-columns:1fr 1fr}.stat-item{padding:12px 8px}.proj-grid{grid-template-columns:1fr}.hero h1{font-size:40px}.radar-wrap,.skill-bars{padding:20px}.filter-btn{padding:7px 12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><main class="wrap">
+<header class="hero"><div class="hero-left"><span class="hero-tag">Tech Skills & Projects</span><h1>김 <em>성학</em></h1><p class="hero-sub">DB QA 엔지니어 · 티맥스티베로<br>2021.08 ~ 재직 중 · DB 검증 / 테스트 인프라 운영 / 자동화</p><div class="hero-stat">
+<div class="stat-item"><span class="stat-num" style="color:var(--accent)">6대</span><span class="stat-label">현재 중앙 모니터링</span></div>
+<div class="stat-item"><span class="stat-num" style="color:var(--accent2)">최대 12h</span><span class="stat-label">수동 실행 대기 제거</span></div>
+<div class="stat-item"><span class="stat-num" style="color:var(--accent3)">1,156</span><span class="stat-label">동시 부하 스레드</span></div>
+<div class="stat-item"><span class="stat-num" style="color:var(--accent4)">5종</span><span class="stat-label">이기종 OS 검증</span></div>
+</div><p class="stamp">2026.10.06 업데이트</p></div></header><h2 class="sec-title">Skill Overview</h2><section class="radar-section"><div class="radar-wrap"><h3 class="radar-title">역량 레이더</h3><svg class="radar-svg" viewBox="0 0 320 305" role="img" aria-label="기존 자기평가 기준 역량 레이더"><polygon points="160.00,125.50 181.22,137.75 181.22,162.25 160.00,174.50 138.78,162.25 138.78,137.75" fill="none" stroke="#1c2a3e"/><polygon points="160.00,101.00 202.44,125.50 202.44,174.50 160.00,199.00 117.56,174.50 117.56,125.50" fill="none" stroke="#1c2a3e"/><polygon points="160.00,76.50 223.65,113.25 223.65,186.75 160.00,223.50 96.35,186.75 96.35,113.25" fill="none" stroke="#1c2a3e"/><polygon points="160.00,52.00 244.87,101.00 244.87,199.00 160.00,248.00 75.13,199.00 75.13,101.00" fill="none" stroke="#1c2a3e"/><path d="M160 150 L160.00 52.00" stroke="#1c2a3e"/><path d="M160 150 L244.87 101.00" stroke="#1c2a3e"/><path d="M160 150 L244.87 199.00" stroke="#1c2a3e"/><path d="M160 150 L160.00 248.00" stroke="#1c2a3e"/><path d="M160 150 L75.13 199.00" stroke="#1c2a3e"/><path d="M160 150 L75.13 101.00" stroke="#1c2a3e"/><polygon points="160.00,69.64 223.65,113.25 226.20,188.22 160.00,228.40 98.89,185.28 100.59,115.70" fill="#60efff" fill-opacity=".15" stroke="#60efff" stroke-width="2"/><circle cx="160.00" cy="69.64" r="4" fill="#60efff"/><text x="160.00" y="25.00" fill="#94a3b8" text-anchor="middle" font-size="11">성능 테스트</text><circle cx="223.65" cy="113.25" r="4" fill="#60efff"/><text x="271.72" y="89.50" fill="#94a3b8" text-anchor="middle" font-size="11">모니터링</text><circle cx="226.20" cy="188.22" r="4" fill="#60efff"/><text x="271.72" y="218.50" fill="#94a3b8" text-anchor="middle" font-size="11">Shell 자동화</text><circle cx="160.00" cy="228.40" r="4" fill="#60efff"/><text x="160.00" y="283.00" fill="#94a3b8" text-anchor="middle" font-size="11">DB 검증</text><circle cx="98.89" cy="185.28" r="4" fill="#60efff"/><text x="48.28" y="218.50" fill="#94a3b8" text-anchor="middle" font-size="11">OS/인프라</text><circle cx="100.59" cy="115.70" r="4" fill="#60efff"/><text x="48.28" y="89.50" fill="#94a3b8" text-anchor="middle" font-size="11">보고서 작성</text></svg><p class="skill-note">차트·숙련도 수치는 기존 자료의 자기평가 기준을 유지했습니다.<br>최신 활용 범위는 아래 기술 태그와 프로젝트에서 확인할 수 있습니다.</p><div class="tech-tags">
+<span>SQL</span>
+<span>Python</span>
+<span>Shell Script</span>
+<span>Jenkins</span>
+<span>REST API</span>
+<span>Prometheus</span>
+<span>Grafana</span>
+<span>pstack / callstack</span>
+</div></div><div class="skill-bars"><h3 class="skill-bars-title">기술별 숙련도</h3><div id="sbarList">
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">JMeter 성능 테스트</span><span class="sbar-pct">82%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:82%;background:var(--accent)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">Tibero DB</span><span class="sbar-pct">80%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:80%;background:var(--accent4)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">Shell Script</span><span class="sbar-pct">78%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:78%;background:var(--accent2)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">Zabbix 모니터링</span><span class="sbar-pct">75%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:75%;background:var(--accent3)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">Linux / Unix</span><span class="sbar-pct">72%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:72%;background:var(--accent3)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">VMware ESXi</span><span class="sbar-pct">48%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:48%;background:var(--accent4)"></div></div></div>
+<div class="sbar-item"><div class="sbar-row"><span class="sbar-name">Python</span><span class="sbar-pct">32%</span></div><div class="sbar-track"><div class="sbar-fill" style="--score:32%;background:var(--accent2)"></div></div></div>
+</div></div></section><h2 class="sec-title">Projects</h2><div class="filter-row" role="group" aria-label="프로젝트 분야">
+<button class="filter-btn active" data-filter="all" aria-pressed="true">전체</button>
+<button class="filter-btn " data-filter="test" aria-pressed="false">성능 테스트</button>
+<button class="filter-btn " data-filter="auto" aria-pressed="false">자동화</button>
+<button class="filter-btn " data-filter="monitor" aria-pressed="false">모니터링</button>
+<button class="filter-btn " data-filter="hw" aria-pressed="false">장비 검증</button>
+<button class="filter-btn " data-filter="infra" aria-pressed="false">인프라</button>
+<button class="filter-btn " data-filter="db" aria-pressed="false">DB 검증</button>
+</div><p class="count" id="count" aria-live="polite">전체 11개 프로젝트</p><div class="proj-grid" id="projGrid">
+<article class="proj-card" data-cat="monitor infra"><div class="proj-top"><span class="proj-icon" aria-hidden="true">📡</span><span class="proj-period">실무 프로젝트</span></div><h3 class="proj-title">Prometheus · Grafana 중앙 모니터링</h3><p class="proj-sub">Windows 기반 환경을 Rocky Linux 중앙 서버로 이관하고, 서버·프로세스·디렉터리 상태를 통합 확인.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Prometheus</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Grafana</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Rocky Linux</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Exporters</span></div><p class="proj-result ">✔ Linux 중앙 서버 이관 완료 · 현재 서버 6대 모니터링</p><details><summary>수행 내용 보기</summary><ul><li>Prometheus·Grafana 설치와 systemd 자동 시작 구성.</li><li>node_exporter·process-exporter 기반 시스템 자원 및 프로세스 지표 수집.</li><li>서버 그룹별 수집 대상과 라벨, 그룹 → 노드 → 인스턴스 대시보드 변수 구성.</li><li>textfile collector로 테스트 디렉터리 사용량 수집, 기존 대시보드 이관 및 공용 접속 환경 구성.</li><li>장비 정리 이후 현재 대상 6대 운영. 과거 Zabbix 구축 대상 13대와 구분.</li></ul></details></article>
+<article class="proj-card" data-cat="auto"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🤖</span><span class="proj-period">2023 ~ 재직 중</span></div><h3 class="proj-title">환경 구성부터 결과 적재까지 자동화</h3><p class="proj-sub">Shell Script·Python·Jenkins로 DB 클러스터 구성, 버전 교체, 원격 부하, 결과 분석·저장을 연결.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">Python</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">Shell Script</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">Jenkins</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">SSH</span></div><p class="proj-result p">✔ 최대 12시간의 수동 실행 대기 제거</p><details><summary>수행 내용 보기</summary><ul><li>2노드 DB 클러스터 자동 구성: 실행 파일 교체, 파라미터 치환, 설정 파일 배포.</li><li>환경 구성 → 버전 교체 → 원격 부하 실행 → 결과 분석 → DB 적재까지 통합 스크립트 구성.</li><li>개발 브랜치 대상 주간 회귀·성능 테스트 및 신규 릴리즈 검증.</li><li>GitLab·Jenkins 연계 및 Control·Required·Mode로 구분한 CLI 구성.</li><li>12시간은 테스트 수행 시간의 단축이 아니라 다음 단계 실행을 기다리는 수동 대기의 제거.</li></ul></details></article>
+<article class="proj-card" data-cat="auto db"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🔎</span><span class="proj-period">실무 프로젝트</span></div><h3 class="proj-title">실패 테스트 재수행 · 크래시 분석 자동화</h3><p class="proj-sub">사내 시스템 API와 로그 분석을 연결해 실패 케이스 등록부터 오류 식별·알림까지 자동화.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">Python</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">REST API</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">pstack</span><span class="proj-tag" style="color:var(--accent2);border-color:var(--border)">Teams</span></div><p class="proj-result p">✔ 8개 테스트 플랜 재수행 등록 · 중복 크래시 구분</p><details><summary>수행 내용 보기</summary><ul><li>Windows 작업 스케줄러 기반 정기 실행 및 사내 테스트 플랫폼 REST API로 실패 케이스 재수행 등록.</li><li>Synology NAS FileStation API로 로그 압축 파일 수집, Python tarfile 스트리밍 분석.</li><li>SIGSEGV·Internal Error 감지 후, Tibero가 pstack으로 남긴 callstack 파일을 분석.</li><li>문제가 발생한 프로세스를 식별하고 호출 스택을 비교해 중복 크래시 여부 확인.</li><li>사내 AI API로 유사 이슈 조회, Teams Adaptive Card로 결과와 관련 링크 전달.</li></ul></details></article>
+<article class="proj-card" data-cat="monitor infra"><div class="proj-top"><span class="proj-icon" aria-hidden="true">📊</span><span class="proj-period">기존 구축 성과</span></div><h3 class="proj-title">디스크 공간 부족 원인 분석 · Zabbix 구축</h3><p class="proj-sub">삭제한 파일을 계속 열고 있는 프로세스를 추적하고, 자원 감시와 임계치 알림으로 대응 보완.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">lsof</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Zabbix</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Linux</span><span class="proj-tag" style="color:var(--accent3);border-color:var(--border)">Shell Script</span></div><p class="proj-result ">✔ 원인 조치 이후 해당 디스크 문제로 인한 테스트 중단 0건</p><details><summary>수행 내용 보기</summary><ul><li>서버 3대에서 약 2주 주기로 반복되던 디스크 공간 부족과 테스트 중단 분석.</li><li>lsof로 삭제 파일을 계속 열고 있는 프로세스를 찾아 정리하고 디스크 공간 회수.</li><li>QA 서버 13대의 CPU·메모리·디스크 사용량 감시 및 임계치 이메일 알림 구축.</li><li>디스크 90% 임계치, 상위 20개 디렉터리 추출 및 메일·메신저 알림 구성.</li></ul></details></article>
+<article class="proj-card" data-cat="test db"><div class="proj-top"><span class="proj-icon" aria-hidden="true">⚡</span><span class="proj-period">2022 ~ 재직 중</span></div><h3 class="proj-title">JMeter 복합 부하 · 안정성 검증</h3><p class="proj-sub">DB 동작별 시나리오와 자원 과부하를 설계하고, 장시간 부하에서 기능과 안정성을 확인.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">JMeter</span><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">TPC-C</span><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">TPC-DS</span><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">TPC-H</span></div><p class="proj-result b">✔ 9개 시나리오 · 총 1,156개 스레드 동시 실행</p><details><summary>수행 내용 보기</summary><ul><li>BenchmarkSQL TPC-C 스키마 위에 커스텀 워크로드와 OLTP·OLAP 시나리오 구성.</li><li>Row Migration·Chained Row·Space·Temp·Hotblock 등 동작별 부하 설계.</li><li>JSON·XML·CLOB·BLOB DML을 Payment·NewOrder 트랜잭션에 결합.</li><li>Prepared Statement와 리터럴 SQL 기반 파싱 비교, PGA·디스크·CPU 과부하 테스트.</li><li>2노드에서 UPDATE와 SELECT를 동시 수행해 노드 간 블록 전송 경합 재현.</li><li>DB 성능 보고서·vmstat·nmon 연계 분석 및 장시간 Stress·Stability 검증.</li></ul></details></article>
+<article class="proj-card" data-cat="test db"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🔍</span><span class="proj-period">2022 ~ 재직 중</span></div><h3 class="proj-title">DB 성능 보고서 기반 병목 분석</h3><p class="proj-sub">처리량과 디스크 I/O를 함께 분석해 DBWR 패치 영향에 따른 성능 변화를 확인.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">TPR</span><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">Disk I/O</span><span class="proj-tag" style="color:var(--accent);border-color:var(--border)">DBWR</span></div><p class="proj-result b">✔ TPS 저하 원인 분석 및 패치 적용 후 성능 재검증</p><details><summary>수행 내용 보기</summary><ul><li>DBWR 패치 영향과 디스크 I/O를 함께 살펴 TPS 저하 원인 분석.</li><li>기존 성능 검증 기록: 기준값 대비 TPS -30%, 패치 적용 후 +20% 개선.</li><li>측정 결과는 각 비교 기준과 조건에 따라 해석하며, 원인 분석과 패치 적용 후 검증을 담당.</li></ul></details></article>
+<article class="proj-card" data-cat="infra db"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🖥</span><span class="proj-period">2021 ~ 재직 중</span></div><h3 class="proj-title">서버 · 가상화 · DB 고가용성 환경</h3><p class="proj-sub">VMware ESXi와 다양한 운영체제에서 DB 테스트 환경을 구성하고 시스템 설정·접근 권한을 관리.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">VMware ESXi</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">RAID</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">LVM</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">TAC</span></div><p class="proj-result o">✔ 신규 장비 설치부터 OS·DB 환경 재구성 및 가이드 공유</p><details><summary>수행 내용 보기</summary><ul><li>VM 생성·구성 및 Tibero TAC·TAS-TAC·TSC 환경 구축과 가이드 작성.</li><li>노후 서버 교체, 신규 서버 설치, 커널 파라미터 조정, RAID 재구성 및 LVM 볼륨 구성.</li><li>root 비밀번호 변경, SSH 키 재배포, 불필요 계정의 접근 권한 회수.</li><li>hosts 파일 기반 호스트명 해석과 방화벽 접근 제어.</li></ul></details></article>
+<article class="proj-card" data-cat="db infra"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🌐</span><span class="proj-period">2021 ~ 재직 중</span></div><h3 class="proj-title">이기종 OS 검증 · DB 연동과 복구</h3><p class="proj-sub">CentOS·AIX·HP-UX·Solaris·Windows 환경에서 배포 이슈와 DB 간 연동을 검증.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">SQL</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">Tibero</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">Oracle</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">DBLink</span></div><p class="proj-result o">✔ 5종 OS 검증 · Tibero–Oracle 연동 · 크로스 플랫폼 복구</p><details><summary>수행 내용 보기</summary><ul><li>운영체제별 실행 파일 패치 검증과 배포, 라이브러리·설정 차이 분석.</li><li>Tibero–Oracle DBLink 구축·연결 검증 및 데이터 이관 테스트.</li><li>HP-UX에서 생성한 DB를 AIX에서 복구하는 Backup &amp; Recovery 검증.</li><li>기능 오류·잘못된 결과·메모리 누수 등의 재현 조건과 로그 정리, 테스트 케이스 보완.</li></ul></details></article>
+<article class="proj-card" data-cat="hw test"><div class="proj-top"><span class="proj-icon" aria-hidden="true">💾</span><span class="proj-period">2021.11 ~ 2022.03</span></div><h3 class="proj-title">DRAM vs Intel Optane Memory</h3><p class="proj-sub">TPC-C 기반 처리 성능을 측정하고 CPU·디스크 I/O 변화를 비교.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">TPC-C</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">DRAM</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">Optane</span></div><p class="proj-result o">✔ 비교 결과 보고 · 검증 장비의 QA 인프라 전환 지원</p><details><summary>수행 내용 보기</summary><ul><li>메모리 구성 차이에 따른 데이터 처리 성능과 시스템 자원 사용량 분석.</li><li>벤더 요청 성능 검증, 결과 보고서 작성 및 발표.</li><li>검증 완료 장비를 테스트 인프라로 전환.</li></ul></details></article>
+<article class="proj-card" data-cat="hw test"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🖴</span><span class="proj-period">2022.11</span></div><h3 class="proj-title">SATA SSD vs NVMe SSD</h3><p class="proj-sub">LVM 기반 비교 환경을 구성하고 데이터 생성 속도를 측정.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">LVM</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">SATA SSD</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">NVMe SSD</span></div><p class="proj-result o">✔ 스토리지 구성별 성능 비교 및 QA 인프라 전환</p><details><summary>수행 내용 보기</summary><ul><li>LVM으로 비교할 디스크 환경 구성 후 데이터 생성 속도 측정.</li><li>스토리지 구성이 DB 작업에 미치는 영향 분석 및 결과 보고.</li></ul></details></article>
+<article class="proj-card" data-cat="hw test"><div class="proj-top"><span class="proj-icon" aria-hidden="true">🔲</span><span class="proj-period">2024.07</span></div><h3 class="proj-title">Intel Xeon 4세대 vs 5세대</h3><p class="proj-sub">물리적 RAID 환경과 CPU 부하 시나리오를 구성해 처리 성능을 비교.</p><div class="proj-tags"><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">TPC-C</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">RAID</span><span class="proj-tag" style="color:var(--accent4);border-color:var(--border)">CPU Benchmark</span></div><p class="proj-result o">✔ TPM 비교 검증 · 신규 장비의 테스트 환경 구성</p><details><summary>수행 내용 보기</summary><ul><li>물리 RAID 환경에서 CPU 세대별 TPM 및 처리 성능 비교.</li><li>성능 결과 보고 및 검증 완료 장비의 OS·DB 환경 구성.</li></ul></details></article>
+</div><div class="legend">
+<div class="legend-item"><span class="legend-dot" style="background:var(--accent3)"></span>운영 개선</div>
+<div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>성능 테스트</div>
+<div class="legend-item"><span class="legend-dot" style="background:var(--accent2)"></span>자동화</div>
+<div class="legend-item"><span class="legend-dot" style="background:var(--accent4)"></span>장비 / 인프라</div>
+</div><footer>김성학 · 기술 역량 & 프로젝트<br>현재 중앙 모니터링 6대 / 과거 Zabbix 구축 13대 · 프로젝트 기간은 기존 기록 기준</footer></main><script>
+const cards=[...document.querySelectorAll('.proj-card')];
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});let n=0;cards.forEach(c=>{const on=b.dataset.filter==='all'||c.dataset.cat.split(' ').includes(b.dataset.filter);c.classList.toggle('hidden',!on);if(on)n++});document.getElementById('count').textContent=n+' / '+cards.length+'개 프로젝트';}));
+</script></body></html>
