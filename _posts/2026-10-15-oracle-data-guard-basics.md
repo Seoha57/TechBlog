@@ -246,7 +246,11 @@ A. 목적, 데이터 흐름, 권한, 관찰 지표, 실패 시 조치, 적용하
 ### 마지막 점검
 
 기술 도입 뒤에는 상태 변화와 복구 가능성을 함께 확인합니다. 정상 결과뿐 아니라 실패와 재시도에서도 데이터와 서비스의 경계가 지켜지는지 기록하고, 책임자와 관찰 지표를 팀이 공유해야 합니다.
-`n<h3 class="references-heading">참고 자료</h3>
+## 전환 훈련과 검증의 역할
+
+Data Guard는 구성 파일이 존재한다고 재해 복구가 완성되는 기술이 아닙니다. 전환을 누가 승인하는지, 애플리케이션 연결 문자열과 읽기·쓰기 역할을 어떻게 바꿀지, 전환 후 데이터 검증을 무엇으로 할지를 사전에 훈련해야 합니다. 계획된 switchover와 비상 failover의 의사결정 기준, 되돌아오는 절차, 사용자 공지와 모니터링 책임을 함께 정리해야 실제 장애에서 데이터 손실 허용 범위와 복구 목표를 지킬 수 있습니다.
+
+<h3 class="references-heading">참고 자료</h3>
 
 - [Oracle Data Guard Concepts and Administration](https://docs.oracle.com/en/database/oracle/oracle-database/23/sbydb/)
 - [Oracle Maximum Availability Architecture](https://www.oracle.com/database/availability/)
