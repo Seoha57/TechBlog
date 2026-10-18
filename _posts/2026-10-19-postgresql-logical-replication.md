@@ -229,6 +229,10 @@ A. 목적, 입력, 기대 결과, 실패 시 조치, 관찰 지표, 소유자와
 
 작업 결과에는 입력 조건, 확인한 상태, 발견한 예외, 다음 변경 전에 확인할 항목을 남깁니다. 이런 기록은 도구의 사용법보다 오래 남는 운영 자산이며, 동일한 유형의 장애와 품질 문제를 줄이는 출발점이 됩니다.
 
++### 최종 확인
+
+완료 전에 결과를 다시 읽고, 예상과 다른 상태가 남지 않았는지 점검합니다. 성공 기준과 복구 기준을 함께 확인하는 습관은 작은 변경이 큰 장애로 이어지는 일을 줄입니다.
+
 <h3 class="references-heading">참고 자료</h3>
 
 - [PostgreSQL Documentation — Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)
