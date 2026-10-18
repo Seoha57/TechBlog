@@ -233,6 +233,10 @@ A. 목적, 입력, 기대 결과, 실패 시 조치, 관찰 지표, 소유자와
 
 완료 전에 결과를 다시 읽고, 예상과 다른 상태가 남지 않았는지 점검합니다. 성공 기준과 복구 기준을 함께 확인하는 습관은 작은 변경이 큰 장애로 이어지는 일을 줄입니다.
 
++### 적용 범위 확인
+
+이 기술을 사용할 때는 기능의 성공 여부만 보지 않고, 실패 뒤에 남는 데이터와 다음 담당자가 수행할 복구 절차를 확인합니다. 정상 흐름·경계 조건·실패 처리의 기준을 문서화하면 도구가 바뀌어도 같은 품질 원칙을 유지할 수 있습니다.
+
 <h3 class="references-heading">참고 자료</h3>
 
 - [PostgreSQL Documentation — Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)
