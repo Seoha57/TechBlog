@@ -67,8 +67,9 @@ const extra = {
     ['액세스 포인트','무선 단말을 유선 네트워크에 연결하는 장비'],['관리형 스위치','VLAN과 포트 설정 등 관리 기능을 제공하는 스위치'],['트렁크 포트','여러 VLAN의 프레임을 하나의 링크로 전달하는 포트'],['액세스 포트','일반적으로 하나의 VLAN에 속한 단말 연결 포트'],['LACP','여러 물리 링크를 하나의 논리 링크로 묶는 표준 방식'],['STP','스위치 간 루프를 방지하는 프로토콜'],['RSTP','STP의 수렴 시간을 개선한 프로토콜'],['루트 브리지','STP에서 기준이 되는 스위치'],['포트 보안','스위치 포트에 허용할 MAC 주소를 제한하는 기능'],['미러링 포트','특정 포트의 트래픽을 복사해 분석 장비로 보내는 기능'],['SFP','스위치 등에 광·구리 트랜시버를 장착하는 모듈 규격'],['라우팅 프로토콜','라우터가 경로 정보를 교환하는 규칙'],['OSPF','링크 상태 정보를 사용하는 내부 게이트웨이 라우팅 프로토콜'],['BGP','서로 다른 자율 시스템 사이의 경로를 교환하는 프로토콜'],['VRRP','라우터 여러 대가 하나의 가상 게이트웨이를 제공하는 프로토콜'],['ACL','조건에 따라 패킷의 허용과 거부를 제어하는 목록'],['DMZ','외부 공개 서버를 내부망과 분리해 배치하는 네트워크 영역'],['프록시','클라이언트와 목적지 서버 사이에서 요청을 중계하는 서버'],['웹 방화벽','HTTP·HTTPS 요청을 분석해 웹 공격을 방어하는 장비 또는 기능'],['시그니처 탐지','알려진 공격 패턴과 일치하는 트래픽을 탐지하는 방식'],['이상 탐지','정상 행위와 다른 패턴을 찾아내는 보안 방식'],['최소 권한','업무에 필요한 최소한의 권한만 부여하는 보안 원칙'],['다중 인증','서로 다른 종류의 인증 요소를 두 가지 이상 요구하는 방식'],['해시','입력 데이터에서 고정 길이의 요약값을 계산하는 방식'],['전자서명','서명자의 인증과 데이터 무결성 확인에 사용하는 기술'],['공개키 암호','공개키와 개인키로 구성된 비대칭 암호 방식'],['인증서','공개키와 소유자 정보를 인증기관이 묶어 서명한 자료'],['CA','디지털 인증서를 발급하고 검증하는 인증기관'],['피싱','신뢰할 만한 기관을 가장해 정보를 빼내는 공격'],['스푸핑','주소나 신원을 속여 정상 통신처럼 보이게 하는 공격'],['스니핑','네트워크를 지나는 패킷을 엿보는 행위'],['랜섬웨어','파일을 암호화하고 금전을 요구하는 악성코드'],['백업 3-2-1','백업 3개, 서로 다른 매체 2개, 오프사이트 1개를 유지하는 원칙'],['RPO','장애 발생 시 허용할 수 있는 데이터 손실 시점'],['RTO','장애 발생 후 서비스를 복구해야 하는 목표 시간'],['보안 패치','취약점을 수정하기 위해 소프트웨어를 업데이트하는 작업'],['보안 로그','접속과 정책 위반 등 보안 사건을 기록한 정보']
   ]
 };
+const shuffledChoices = (correct, candidates) => { const choices = [correct, ...candidates.filter(item => item !== correct).sort(() => Math.random() - .5).slice(0, 3)].sort(() => Math.random() - .5); return [choices, choices.indexOf(correct)]; };
 for (const [category, rows] of Object.entries(extra)) {
-  for (const [term, fact] of rows) questions.push({ category, question: `${term}에 대한 설명으로 가장 적절한 것은?`, choices: [fact, '네트워크 케이블의 물리적 색상을 정하는 규칙이다', '모든 패킷을 삭제하는 운영체제 기능이다', '화면 해상도를 자동으로 조절하는 장치다'], answer: 0, explanation: fact + ' (자체 제작 학습 문항)' });
+  for (const [term, fact] of rows) { const [choices, answer] = shuffledChoices(fact, rows.map(([, item]) => item)); questions.push({category, question:`${term}에 대한 설명으로 가장 적절한 것은?`, choices, answer, explanation:fact + ' (자체 제작 학습 문항)'}); }
 }
 questions.push(
   {category:'TCP/IP',question:'IPv4 헤더의 프로토콜 필드는 무엇을 나타내는가?',choices:['상위 계층 프로토콜','케이블 제조사','화면 크기','사용자 비밀번호'],answer:0,explanation:'IPv4의 Protocol 필드는 상위 계층이 TCP인지 UDP인지 등을 나타냅니다.'},
@@ -90,13 +91,13 @@ for (const category of Object.keys(extra)) {
 // 기존 400문항을 유지한 뒤 과목별 신규 문항 50개를 추가합니다.
 for (const [category, rows] of Object.entries(extra)) {
   const newRows = [...rows, ...rows.slice(0, 13)];
-  for (const [term, fact] of newRows) questions.push({category, question:`심화 확인: 다음 설명에 해당하는 용어는? ${fact}`, choices:[term,'브로드캐스트 도메인','파일 시스템','전원 공급 장치'], answer:0, explanation:`정답은 ${term}입니다. ${fact}`});
+  for (const [term, fact] of newRows) { const [choices, answer] = shuffledChoices(term, rows.map(([item]) => item)); questions.push({category, question:`심화 확인: 다음 설명에 해당하는 용어는? ${fact}`, choices, answer, explanation:`정답은 ${term}입니다. ${fact}`}); }
 }
 
 // 각 과목별 신규 자체 제작 문항 50개를 추가합니다. (최종 150개씩, 총 600개)
 for (const [category, rows] of Object.entries(extra)) {
   const newRows = [...rows, ...rows.slice(0, 13)];
-  for (const [term, fact] of newRows) questions.push({category, question:`다음 설명에 해당하는 용어는? ${fact}`, choices:[term,'브로드캐스트 도메인','파일 시스템','전원 공급 장치'], answer:0, explanation:`정답은 ${term}입니다. ${fact}`});
+  for (const [term, fact] of newRows) { const [choices, answer] = shuffledChoices(term, rows.map(([item]) => item)); questions.push({category, question:`다음 설명에 해당하는 용어는? ${fact}`, choices, answer, explanation:`정답은 ${term}입니다. ${fact}`}); }
 }
 
 // 과목별 복습 변형 문항을 보충해 학습 풀을 100문항씩 유지합니다.
