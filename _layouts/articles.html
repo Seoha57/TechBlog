@@ -2,7 +2,7 @@
 layout: default
 ---
 <section class="articles articles-page">
-  <div class="section-heading"><div><p class="section-label">ARCHIVE</p><h1>전체 아티클</h1></div><span data-post-count>{{ site.posts.size | minus: 1 }} articles</span></div>
+  <div class="section-heading"><div><p class="section-label">ARCHIVE</p><h1>전체 아티클</h1></div><span data-post-count>전체 {{ site.posts.size | minus: 1 }}개</span></div>
   {% assign visible_posts = site.posts | where_exp: "post", "post.exclude_from_latest != true" %}
   <div class="article-controls"><div class="filters"><a class="active" href="#" data-filter="all">전체</a><a href="#" data-filter="qa">QA</a><a href="#" data-filter="dba">DBA</a><a href="#" data-filter="infrastructure">Infrastructure</a><a href="#" data-filter="ai">AI</a></div><label class="article-search"><span class="sr-only">아티클 검색</span><input type="search" data-article-search placeholder="글 검색" autocomplete="off"></label></div>
   <div class="post-list">

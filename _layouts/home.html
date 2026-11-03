@@ -26,7 +26,7 @@ layout: default
 <section id="articles" class="articles">
   {% assign visible_posts = site.posts | where_exp: "post", "post.exclude_from_latest != true" %}
   {% assign latest_posts = visible_posts | slice: 0, 6 %}
-  <div class="section-heading"><h2>최신 아티클</h2><span data-post-count>{{ latest_posts.size }} of {{ visible_posts.size }}</span></div>
+  <div class="section-heading"><h2>최신 아티클</h2><span data-post-count>최신 글 {{ latest_posts.size }}개 · 전체 {{ visible_posts.size }}개</span></div>
   <div class="article-controls">
     <div class="filters">
       <a class="active" href="#" data-filter="all">전체</a><a href="#" data-filter="qa">QA</a><a href="#" data-filter="dba">DBA</a><a href="#" data-filter="infrastructure">Infrastructure</a><a href="#" data-filter="ai">AI</a>
