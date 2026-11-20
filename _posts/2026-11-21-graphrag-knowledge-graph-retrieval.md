@@ -5,6 +5,7 @@ categories: [AI]
 tags: [ai, graphrag, rag, knowledge-graph, retrieval, community-detection, llm]
 description: "GraphRAG(그래프 RAG)가 기존 벡터 기반 RAG의 어떤 한계를 풀려는지, 엔티티·관계 추출과 커뮤니티 요약, 로컬·글로벌 검색의 차이를 업무 예시와 코드 예시로 처음 접하는 독자도 이해하도록 설명합니다."
 ---
+{% raw %}
 
 ## 먼저 답하기
 
@@ -53,7 +54,7 @@ A. 아닙니다. GraphRAG는 색인 단계에서 LLM을 대량으로 호출하�
 
 ## GraphRAG 동작 흐름
 
-<figure class="article-figure"><img src="{{ '/assets/images/graphrag-index-query-flow.svg' | relative_url }}" alt="문서를 청크로 나눠 엔티티와 관계를 추출하고 그래프와 커뮤니티 요약을 만든 뒤, 질문 유형에 따라 로컬 검색과 글로벌 검색으로 나뉘어 답을 만드는 구조"><figcaption>그림. 색인 단계에서 그래프와 커뮤니티 요약을 미리 만들고, 질문 유형에 따라 로컬 검색과 글로벌 검색을 선택한다. 이미지 출처: 직접 제작</figcaption></figure>
+{% endraw %}<figure class="article-figure"><img src="{{ '/assets/images/graphrag-index-query-flow.svg' | relative_url }}" alt="문서를 청크로 나눠 엔티티와 관계를 추출하고 그래프와 커뮤니티 요약을 만든 뒤, 질문 유형에 따라 로컬 검색과 글로벌 검색으로 나뉘어 답을 만드는 구조"><figcaption>그림. 색인 단계에서 그래프와 커뮤니티 요약을 미리 만들고, 질문 유형에 따라 로컬 검색과 글로벌 검색을 선택한다. 이미지 출처: 직접 제작</figcaption></figure>{% raw %}
 
 ### 색인 단계: 문서에서 요약까지
 
@@ -407,3 +408,4 @@ GraphRAG는 "조각을 찾는" RAG에 "관계와 전체 구조"를 더하려는 
 - [Peng et al., Graph Retrieval-Augmented Generation: A Survey (arXiv:2408.08921)](https://arxiv.org/abs/2408.08921)
 - [W3C: RDF 1.1 Primer](https://www.w3.org/TR/rdf11-primer/)
 - [Neo4j Cypher Manual](https://neo4j.com/docs/cypher-manual/current/)
+{% endraw %}

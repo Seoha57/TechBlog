@@ -5,6 +5,7 @@ categories: [Infrastructure]
 tags: [infrastructure, ansible, configuration-management, idempotency, playbook, inventory, automation]
 description: "Ansible(앤서블)의 에이전트 없는 구조와 멱등성, 인벤토리·플레이북·핸들러·check 모드를 서버 설정 업무 예시와 실행 결과 예시로 처음 접하는 독자도 이해하도록 설명합니다."
 ---
+{% raw %}
 
 ## 먼저 답하기
 
@@ -118,7 +119,7 @@ ansible_python_interpreter=/usr/bin/python3
 
 `become: true`는 권한 상승(sudo)으로 실행하라는 뜻입니다. `validate`는 설정 파일을 서버에 쓰기 전에 문법을 점검하는 옵션이라, 문법 오류가 있는 설정이 운영 서버에 배포되는 사고를 줄여 줍니다. 여기서 `%s`는 임시 파일 경로로 치환됩니다.
 
-<figure class="article-figure"><img src="{{ '/assets/images/ansible-idempotent-run-flow.svg' | relative_url }}" alt="인벤토리와 플레이북을 읽은 제어 노드가 SSH로 대상 서버의 현재 상태를 확인하고, 이미 원하는 상태면 ok, 다르면 changed로 바꾸며 핸들러를 한 번만 실행하는 흐름"><figcaption>그림. 제어 노드가 SSH로 관리 노드의 현재 상태를 조사하고, 다를 때만 수정하며 changed가 발생하면 핸들러를 실행한다. 이미지 출처: 직접 제작</figcaption></figure>
+{% endraw %}<figure class="article-figure"><img src="{{ '/assets/images/ansible-idempotent-run-flow.svg' | relative_url }}" alt="인벤토리와 플레이북을 읽은 제어 노드가 SSH로 대상 서버의 현재 상태를 확인하고, 이미 원하는 상태면 ok, 다르면 changed로 바꾸며 핸들러를 한 번만 실행하는 흐름"><figcaption>그림. 제어 노드가 SSH로 관리 노드의 현재 상태를 조사하고, 다를 때만 수정하며 changed가 발생하면 핸들러를 실행한다. 이미지 출처: 직접 제작</figcaption></figure>{% raw %}
 
 ## 멱등성을 실행 결과로 이해하기
 
@@ -506,3 +507,4 @@ Ansible의 핵심은 "명령을 실행한다"가 아니라 "원하는 상태를 
 - [Ansible Documentation: Tips and tricks](https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html)
 - [Ansible Documentation: Protecting sensitive data with Ansible vault](https://docs.ansible.com/ansible/latest/vault_guide/index.html)
 - [Ansible Documentation: Error handling in playbooks](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_error_handling.html)
+{% endraw %}
