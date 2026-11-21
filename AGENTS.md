@@ -65,6 +65,7 @@ Select-String -Encoding utf8 -Path _posts/*.md -Pattern 'keyword|키워드' -Lis
 5. Front Matter, 필수 섹션, 참고 자료 헤딩, 링크, 이미지 캡션, 시각·실습 자료 최소 기준(그림·코드 블록·표·참고 자료 수)을 확인한다. 이미지 파일 경로가 실제로 존재하는지도 확인한다.
 6. 모든 외부 참고 링크의 HTTP 상태를 확인하고, 실패 링크는 교체하거나 제거한다.
 7. `git diff --check`를 통과시킨다. Markdown 공백 오류, SVG/XML 변경, 링크를 함께 점검한다.
+8. Liquid 충돌을 막는다. Jekyll은 본문의 `{{ }}`, `{% %}`를 Liquid로 해석하므로 Ansible·Jinja2·Helm·Go 템플릿처럼 이 문법을 쓰는 코드 블록이나 인라인 코드는 반드시 `{% raw %}` … `{% endraw %}`로 감싼다. 단, `relative_url` 같은 이미지 경로용 Liquid는 raw 밖에 둔다. 커밋 전 `Select-String -Encoding utf8 -Path _posts/<새 글>.md -Pattern '\{\{|\{%'`로 해당 문법 위치를 모두 확인한다.
 
 본문 글자 수 확인 예시:
 
