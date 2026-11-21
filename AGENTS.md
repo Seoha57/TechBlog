@@ -66,6 +66,19 @@ Select-String -Encoding utf8 -Path _posts/*.md -Pattern 'keyword|키워드' -Lis
 6. 모든 외부 참고 링크의 HTTP 상태를 확인하고, 실패 링크는 교체하거나 제거한다.
 7. `git diff --check`를 통과시킨다. Markdown 공백 오류, SVG/XML 변경, 링크를 함께 점검한다.
 8. Liquid 충돌을 막는다. Jekyll은 본문의 이중 중괄호 출력 태그와 중괄호+퍼센트 블록 태그를 Liquid로 해석하므로, Ansible·Jinja2·Helm·Go 템플릿처럼 이 문법을 쓰는 코드 블록이나 인라인 코드는 반드시 Liquid `raw` 태그와 `endraw` 태그 사이에 넣는다(예: `_posts/2026-11-21-ansible-idempotent-configuration-management.md`). 단, `relative_url` 같은 이미지 경로용 Liquid는 raw 구간 밖에 둔다. 커밋 전 `Select-String -Encoding utf8 -Path _posts/<새 글>.md -Pattern '\x7B\x7B|\x7B%'`로 해당 문법 위치를 모두 확인한다. 이 AGENTS.md도 GitHub Pages가 렌더링하므로 여기에 Liquid 태그를 그대로 적지 않는다.
+9. 커밋 전에 GitHub Pages와 같은 `github-pages` gem으로 로컬 빌드를 돌려 통과시킨다. 저장소에 Gemfile을 추가하지 않고 임시 디렉터리를 쓴다(Linux 클라우드 환경 기준).
+
+```bash
+command -v ruby >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ruby-full build-essential zlib1g-dev; }
+command -v bundle >/dev/null || sudo gem install bundler --no-document
+mkdir -p /tmp/pages
+printf "source 'https://rubygems.org'\ngem 'github-pages', group: :jekyll_plugins\ngem 'webrick'\ngem 'csv'\ngem 'base64'\ngem 'bigdecimal'\ngem 'logger'\n" > /tmp/pages/Gemfile
+export BUNDLE_GEMFILE=/tmp/pages/Gemfile BUNDLE_PATH=/tmp/pages/vendor PAGES_REPO_NWO=Seoha57/TechBlog
+bundle install --quiet
+bundle exec jekyll build --destination /tmp/pages/_site
+```
+
+빌드가 글 내용(Liquid, YAML Front Matter 등) 때문에 실패하면 고치고 다시 빌드해 통과할 때까지 커밋하지 않는다. Ruby·gem 설치 자체가 환경 문제로 끝내 실패할 때만 이 단계를 건너뛰고 완료 보고에 그 사실을 적으며, 그 경우에도 아래 Pages 성공 확인은 그대로 수행한다.
 
 본문 글자 수 확인 예시:
 
