@@ -4,6 +4,7 @@ title: "Mixture of Experts 입문: 토큰마다 일부 전문가만 계산하는
 categories: [AI]
 tags: [ai, mixture-of-experts, moe, llm, transformer, sparse-model, routing]
 description: "MoE(Mixture of Experts, 전문가 혼합) 모델이 기존 밀집 모델과 어떻게 다른지, 라우터와 top-k 전문가 선택, 부하 균형 손실, 전체 파라미터와 활성 파라미터의 차이, 서빙 시 메모리·통신 비용을 코드와 표로 처음 접하는 독자도 이해하도록 설명합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 {% raw %}
 

@@ -4,6 +4,7 @@ title: "GraphRAG 입문: 지식 그래프와 커뮤니티 요약으로 전체 �
 categories: [AI]
 tags: [ai, graphrag, rag, knowledge-graph, retrieval, community-detection, llm]
 description: "GraphRAG(그래프 RAG)가 기존 벡터 기반 RAG의 어떤 한계를 풀려는지, 엔티티·관계 추출과 커뮤니티 요약, 로컬·글로벌 검색의 차이를 업무 예시와 코드 예시로 처음 접하는 독자도 이해하도록 설명합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 {% raw %}
 

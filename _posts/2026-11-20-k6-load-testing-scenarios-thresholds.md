@@ -4,6 +4,7 @@ title: "k6로 부하 테스트를 설계하는 법: 시나리오·Executor·Thre
 categories: [QA]
 tags: [qa, k6, load-testing, performance-testing, thresholds, scenarios, slo]
 description: "k6의 시나리오와 Executor, Threshold, Check, 메트릭을 기반 개념부터 설명하고, 닫힌 모델과 열린 모델의 차이를 이해해 스모크·부하·스트레스 테스트의 합격 기준을 코드로 정의하는 방법을 정리합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 
 ## 먼저 답하기

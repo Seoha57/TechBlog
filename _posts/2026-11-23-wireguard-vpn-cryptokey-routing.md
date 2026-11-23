@@ -4,6 +4,7 @@ title: "WireGuard 입문: 공개키와 AllowedIPs로 만드는 단순한 VPN 터
 categories: [Infrastructure]
 tags: [infrastructure, wireguard, vpn, linux, networking, cryptography, udp]
 description: "WireGuard(와이어가드)가 기존 IPsec·OpenVPN과 무엇이 다른지, 공개키 기반 피어 설정과 AllowedIPs 라우팅, 핸드셰이크와 키 교체, 설정 파일·명령어·점검 방법을 처음 접하는 독자도 이해하도록 업무 예시와 함께 설명합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 {% raw %}
 

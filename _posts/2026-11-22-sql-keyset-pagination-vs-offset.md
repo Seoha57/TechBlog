@@ -4,6 +4,7 @@ title: "SQL 페이지네이션을 설계하는 법: OFFSET의 비용과 Keyset(S
 categories: [DBA]
 tags: [dba, sql, pagination, keyset-pagination, offset, index, postgresql, performance]
 description: "OFFSET 페이지네이션이 깊은 페이지에서 느려지는 이유와 중복·누락 문제를 설명하고, 유일한 정렬 키와 복합 인덱스로 Keyset(Seek) 방식을 설계하는 방법을 PostgreSQL 예시와 Oracle·MySQL 차이까지 함께 정리합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 
 ## 먼저 답하기

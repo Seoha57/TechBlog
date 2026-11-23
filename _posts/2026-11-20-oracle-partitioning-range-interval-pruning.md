@@ -4,6 +4,7 @@ title: "Oracle Partitioning을 설계하는 법: Range·Interval·Local Index·�
 categories: [DBA]
 tags: [oracle, partitioning, interval-partition, partition-pruning, local-index, data-lifecycle, dba]
 description: "Oracle Partitioning의 Range·List·Hash·Interval 방식과 파티션 프루닝, Local·Global Index, EXCHANGE·DROP 같은 유지보수 작업을 기반 개념부터 설명하고, 보관 정책과 성능 요구에 맞춰 파티션 키를 고르는 운영 기준을 정리합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 
 ## 먼저 답하기

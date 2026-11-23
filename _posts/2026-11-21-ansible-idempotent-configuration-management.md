@@ -4,6 +4,7 @@ title: "Ansible로 서버 설정을 멱등하게 관리하기: 인벤토리·플
 categories: [Infrastructure]
 tags: [infrastructure, ansible, configuration-management, idempotency, playbook, inventory, automation]
 description: "Ansible(앤서블)의 에이전트 없는 구조와 멱등성, 인벤토리·플레이북·핸들러·check 모드를 서버 설정 업무 예시와 실행 결과 예시로 처음 접하는 독자도 이해하도록 설명합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 {% raw %}
 

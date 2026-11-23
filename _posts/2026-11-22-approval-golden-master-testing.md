@@ -4,6 +4,7 @@ title: "승인 테스트(Golden Master)로 레거시 동작을 고정하는 법:
 categories: [QA]
 tags: [qa, approval-testing, golden-master, characterization-test, snapshot-testing, legacy-code, regression]
 description: "승인 테스트와 골든 마스터, 특성화 테스트, 스냅샷 테스트의 차이를 기반 개념부터 설명하고, 출력 정규화와 approved 파일 리뷰, 갱신 규칙으로 레거시 코드의 현재 동작을 안전하게 고정하는 방법을 정리합니다."
+last_modified_at: 2026-11-23 12:00:00 +0900
 ---
 
 ## 먼저 답하기

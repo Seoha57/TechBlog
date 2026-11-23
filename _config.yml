@@ -11,6 +11,16 @@ permalink: /:categories/:title/
 author:
   name: ""
 
+defaults:
+  - scope:
+      path: "google12dd74ac0655d0e2.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "naverd978d8361ebab89485deac6f874c40dc.html"
+    values:
+      sitemap: false
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
