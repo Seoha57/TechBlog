@@ -1,53 +1,52 @@
 # 아직 운영 중입니다 — 작업 프로세스
 
+이 문서는 사람이 블로그 작업 흐름을 빠르게 파악하기 위한 요약이다. 세부 기준(분량, 시각 자료, 기반 기술 섹션, 주제 중복 금지, 검증·배포 완료 기준)은 [`AGENTS.md`](AGENTS.md)가 유일한 기준이며, 두 문서가 다르면 `AGENTS.md`를 따른다.
+
 ## 1. 작업공간 준비
 
 ```bash
 git clone https://github.com/Seoha57/TechBlog.git
 cd TechBlog
+git pull --ff-only origin main
+git status --short
 ```
 
-이미 내려받은 저장소라면 최신 상태를 먼저 받습니다.
+- 사이트: `https://seoha57.github.io/TechBlog/`
+- 글 주소: `https://seoha57.github.io/TechBlog/{category}/{slug}/`
+- `_config.yml`의 `baseurl: /TechBlog`는 바꾸지 않는다.
 
-```bash
-git pull origin main
-```
+## 2. 일일 작업 요약
 
-사이트 주소는 `https://seoha57.github.io/TechBlog/`입니다. `/TechBlog`는 저장소 이름이므로 `_config.yml`의 `baseurl`과 링크에서 유지합니다.
+매일 오전 8시(KST) Claude Code 클라우드 루틴이 `AGENTS.md`를 읽고 다음을 수행한다. 사람이 직접 쓸 때도 같은 순서를 따른다.
 
-## 2. 글 작성 전 확인
+1. `_posts` 전체와 대조해 주제 중복이 없는 새 주제 두 개를 고른다. 카테고리는 최근 글 기준으로 `QA → DBA → Infrastructure → AI`를 순환한다.
+2. 공식 문서·표준·논문 등 신뢰할 수 있는 원문을 조사한다.
+3. `_posts/YYYY-MM-DD-slug.md`로 두 글을 작성한다.
+4. 분량·필수 섹션·시각 자료·링크·Liquid 문법을 검증하고, 로컬 Jekyll 빌드를 통과시킨다.
+5. `main`에 커밋·푸시하고, GitHub Pages 배포 성공과 라이브 URL HTTP 200을 확인한다.
 
-1. 주제를 QA, DBA, Infrastructure, AI 중 하나로 정합니다.
-2. 최신 기술인지 확인하고 공식 문서·논문·신뢰할 수 있는 기술 블로그를 조사합니다.
-3. 실제로 사용한 기술인지, 공개 자료를 바탕으로 학습하는 주제인지 구분합니다.
-4. 실제 사용 경험이 없다면 “직접 실행했다”, “성능을 측정했다”라고 쓰지 않습니다.
+## 3. 글 기준 한눈에 보기
 
-## 3. 기술 글 필수 기준
+| 항목 | 기준 |
+| --- | --- |
+| 분량 | Front Matter 제외 본문 한글 8,000자 이상(미달이면 커밋 금지) |
+| Front Matter | `title`, `categories`, `tags`, `description` |
+| 필수 섹션 | `## 먼저 답하기`, `## 먼저 알아둘 기반 기술`, `## 한계와 적용 기준 Q&A`, 참고 자료 헤딩 |
+| 기반 기술 | 본문에서 쓰이는 사전 개념을 빠짐없이, 소절 4개 이상, 본문 절과 연결하는 지도 표 |
+| 시각·실습 자료 | 그림 1개 이상, 코드 블록 4개 이상, 비교 표 1개 이상, 참고 자료 5개 이상 |
+| 이미지 | 직접 제작 SVG(`이미지 출처: 직접 제작`) 또는 라이선스 확인된 원본(출처·라이선스 캡션) |
+| 서술 | 직접 하지 않은 운영·측정·장애 대응을 경험처럼 쓰지 않는다 |
+| 독자 | 취업 준비생과 해당 기술을 처음 접하는 현업자. 약어는 첫 등장 시 풀네임과 쉬운 정의 |
 
-- 본문은 최소 5,000자 이상
-- 명확한 제목과 카테고리·태그 지정
-- 글 초반에 초보자를 위한 기본 개념 설명
-- 새 기술을 소개할 때는 해당 기술의 기반이 되는 개념·약어·문제 상황을 먼저 설명
-- 독자가 해당 기술을 처음 본다고 가정하고, “무엇인지 → 왜 필요한지 → 어떻게 쓰는지” 순서로 작성
-- 설명마다 가능한 경우 구체적인 예시 포함
-- 초반에 `먼저 답하면` Q&A 추가
-- 후반에 `한계와 적용 기준` Q&A 추가
-- 기술 내용의 참고 자료와 이미지 출처를 별도로 표시
-- 공식 문서·논문·신뢰 가능한 기술 블로그의 시각 자료를 우선 검토하고, 라이선스와 원문 링크를 확인한 경우에만 사용
-- 외부 이미지는 저작자·원문·라이선스를 캡션에 함께 표시
-- 직접 만든 도식은 외부 자료를 보완할 때만 사용하며, `이미지 출처: 직접 제작` 또는 `이미지 출처: ChatGPT 생성`으로 구분
-- 같은 민트 박스·화살표 흐름도를 반복하지 않는다. 글의 질문에 맞춰 실제 화면, 코드·설정, 비교표, 타임라인, 그래프 등 서로 다른 형식을 선택한다
-
-## 4. 파일 작성 규칙
-
-글 파일은 `_posts` 아래에 날짜와 slug를 사용합니다.
+## 4. 파일 구조
 
 ```text
 _posts/YYYY-MM-DD-topic-name.md
 assets/images/topic-name-flow.svg
+assets/images/sources/      # 라이선스가 확인된 외부 이미지
 ```
 
-기본 Front Matter 예시:
+Front Matter 예시:
 
 ```yaml
 ---
@@ -56,66 +55,24 @@ title: "명확한 글 제목"
 date: 2026-09-16 00:00:00 +0900
 categories: [qa]
 tags: [qa, example, technology]
+description: "한 줄 요약"
 ---
 ```
 
-설명용 도식은 기존 민트색 UI와 어울리는 SVG로 만들고, 글 안에서는 다음 구조로 넣습니다.
+그림은 `<figure class="article-figure">` 안에 `img`와 `figcaption`을 넣는 기존 글의 형식을 그대로 따른다. 이미지 경로는 `relative_url` 필터를 쓴다(기존 글 참고).
 
-```html
-<figure class="article-figure">
-  <img src="{{ '/assets/images/topic-name-flow.svg' | relative_url }}" alt="이미지 설명">
-  <figcaption>이미지 출처: ChatGPT 생성</figcaption>
-</figure>
-```
+## 5. Jekyll·Liquid 주의
 
-## 5. 글 작성 후 검토
+Jekyll은 본문의 이중 중괄호와 중괄호+퍼센트 문법을 Liquid로 해석한다. Ansible·Jinja2·Helm·Go 템플릿처럼 같은 문법을 쓰는 예시는 Liquid `raw`/`endraw` 태그로 감싼다. GitHub Pages는 루트의 `.md` 문서(이 파일, `AGENTS.md` 포함)도 렌더링하므로 이런 문서에 해당 문법을 그대로 적지 않는다.
 
-다음 항목을 확인합니다.
-
-- 본문 글자 수가 5,000자 이상인가?
-- 제목·카테고리·태그가 명확한가?
-- 기본 용어를 처음에 설명했는가?
-- JSON, YAML, SQL 또는 상황 예시가 있는가?
-- 장점만 말하지 않고 한계와 적용 조건을 설명했는가?
-- 직접 수행하지 않은 일을 실제 경험처럼 표현하지 않았는가?
-- 본문 참고 자료와 이미지 출처가 모두 있는가?
-- 내부 정보·토큰·개인정보가 포함되지 않았는가?
-- 글 끝에서 `글 목록 보기`와 이전·다음 글 이동이 가능한가?
-
-## 6. 로컬 확인과 반영
-
-변경 파일을 확인합니다.
+## 6. 반영과 확인
 
 ```bash
-git status
 git diff --check
-```
-
-변경 사항을 커밋하고 푸시합니다.
-
-```bash
-git add _posts assets _layouts assets/css
-git commit -m "Add new technical article"
+git add _posts assets
+git diff --cached --check
+git commit -m "docs: add <topic1> and <topic2> guides"
 git push origin main
 ```
 
-GitHub Pages 배포 후 몇 분 뒤 다음 주소에서 확인합니다.
-
-```text
-https://seoha57.github.io/TechBlog/
-```
-
-글 주소는 보통 다음 형태입니다.
-
-```text
-https://seoha57.github.io/TechBlog/{category}/{slug}/
-```
-
-## 7. 현재 카테고리와 글
-
-- QA: Playwright MCP, Contract Testing/Pact, ITSM·ITIL·ISO·CMMI
-- DBA: PostgreSQL 18 AIO, PostgreSQL + pgvector
-- Infrastructure: OpenTelemetry eBPF, Kubernetes Gateway API
-- AI: LLM, AI 에이전트, 업무 적용과 검증
-
-새 글을 추가할 때는 기존 글과 주제가 겹치는지 확인하고, 같은 설명을 반복하기보다 새로운 관점과 예시를 추가합니다.
+푸시만으로 끝내지 않는다. 해당 커밋의 Pages Actions 실행이 `completed/success`인지, 새 글 라이브 URL이 HTTP 200인지 확인한다(명령 예시는 `AGENTS.md`).
