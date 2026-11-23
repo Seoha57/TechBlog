@@ -6,6 +6,7 @@ layout: default
     <div class="post-meta"><span>{{ page.categories | first | default: 'NOTE' }}</span><time>{{ page.date | date: '%Y.%m.%d' }}</time></div>
     <h1>{{ page.title }}</h1>
   </header>
+  <p class="ai-notice">이 글은 AI(Claude)가 공개 자료를 바탕으로 작성했습니다. 사실 오류가 있을 수 있으니 중요한 내용은 참고 자료의 원문으로 확인하세요.</p>
   <div class="post-body">{{ content }}</div>
   <nav class="article-nav" aria-label="글 탐색">
     <a class="article-nav-home" href="{{ '/#articles' | relative_url }}">글 목록 보기 <span>↗</span></a>
