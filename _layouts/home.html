@@ -46,6 +46,6 @@ layout: default
     {% endfor %}
   </div>
   <p class="article-search-empty" data-search-empty hidden>검색 결과가 없습니다.</p>
-  {% if visible_posts.size > 6 %}<a class="all-articles-link" href="{{ '/articles/' | relative_url }}">전체 글 보기 <span>↗</span></a>{% endif %}
+  <a class="all-articles-link" data-more data-base="{{ '/articles/' | relative_url }}" href="{{ '/articles/' | relative_url }}"{% if visible_posts.size <= 6 %} hidden{% endif %}>전체 글 보기 <span>↗</span></a>
 </section>
 <script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
